@@ -1,6 +1,10 @@
 pt-BR:
   sure: "Você tem certeza?"
   
+  customers:
+    index:
+      title: "Clientes"
+  
   date:
     abbr_day_names:
     - Dom
