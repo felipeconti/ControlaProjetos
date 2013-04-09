@@ -1,13 +1,12 @@
 pt-BR:
   sure: "Você tem certeza?"
   
-  new: "Novo"
-  edit: "Editar"
-  destroy: "Apagar?"
-  
   customers:
     index:
       title: "Clientes"
+      new: "Novo"
+      edit: "Editar"
+      destroy: "Apagar?"
   
   date:
     abbr_day_names:
