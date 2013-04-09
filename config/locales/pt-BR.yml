@@ -1,6 +1,13 @@
 pt-BR:
   sure: "Você tem certeza?"
-  
+
+  activerecord:
+    models:
+      customer: Cliente
+    attributes:
+      customer:
+        name: "Nome"
+
   customers:
     index:
       title: "Clientes"
