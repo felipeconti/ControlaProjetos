@@ -1,6 +1,10 @@
 pt-BR:
   sure: "Você tem certeza?"
   
+  new: "Novo"
+  edit: "Editar"
+  destroy: "Apagar?"
+  
   customers:
     index:
       title: "Clientes"
