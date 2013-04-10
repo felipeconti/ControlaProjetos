@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyString
+  hours: 1
+  status: 1
+  project: 
+  user: 
+  type: 
+
+two:
+  description: MyString
+  hours: 1
+  status: 1
+  project: 
+  user: 
+  type: 

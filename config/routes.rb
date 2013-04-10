@@ -3,10 +3,13 @@ ControlaProjetos::Application.routes.draw do
   mount RailsAdmin::Engine => '/_admin', :as => 'rails_admin'
 
   resources :customers do
-    resources :projects
+    resources :projects do
+      resources :tasks
+    end
   end
 
   resources :projects
+  resources :tasks
 
   devise_for :users
 

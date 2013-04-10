@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
   respond_to :json
+  respond_to :xml
   def index
     @customers = Customer.all
     respond_with(@customers)
