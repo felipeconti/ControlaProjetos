@@ -4,12 +4,15 @@ ControlaProjetos::Application.routes.draw do
 
   resources :customers do
     resources :projects do
-      resources :tasks
+      resources :tasks do
+        resources :items
+      end
     end
   end
 
   resources :projects
   resources :tasks
+  resources :items
 
   devise_for :users
 

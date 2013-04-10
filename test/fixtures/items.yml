@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyString
+  hour_estimated: 1.5
+  hour_used: 1.5
+  date_start: 2013-04-10
+  date_end: 2013-04-10
+  task: 
+  type: 
+  user: 
+
+two:
+  description: MyString
+  hour_estimated: 1.5
+  hour_used: 1.5
+  date_start: 2013-04-10
+  date_end: 2013-04-10
+  task: 
+  type: 
+  user: 

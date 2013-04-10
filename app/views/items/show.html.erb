@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @item.description %>
+</p>
+
+<p>
+  <b>Hour estimated:</b>
+  <%= @item.hour_estimated %>
+</p>
+
+<p>
+  <b>Hour used:</b>
+  <%= @item.hour_used %>
+</p>
+
+<p>
+  <b>Date start:</b>
+  <%= @item.date_start %>
+</p>
+
+<p>
+  <b>Date end:</b>
+  <%= @item.date_end %>
+</p>
+
+<p>
+  <b>Task:</b>
+  <%= @item.task_id %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @item.type_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @item.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

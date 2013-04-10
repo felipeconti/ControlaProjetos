@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   respond_to :json
+  respond_to :xml
   before_filter :find_customer
 
   def index
