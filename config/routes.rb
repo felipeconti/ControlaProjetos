@@ -14,7 +14,9 @@ ControlaProjetos::Application.routes.draw do
   resources :tasks
   resources :items
 
-  devise_for :users
+  devise_for :users do
+    match '/users/sign_up' => 'devise/sessions#new'
+  end
 
   root :to => "customers#index"
 
