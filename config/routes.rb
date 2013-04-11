@@ -10,9 +10,9 @@ ControlaProjetos::Application.routes.draw do
     end
   end
 
-  resources :projects
-  resources :tasks
-  resources :items
+  #resources :projects
+  #resources :tasks
+  #resources :items
 
   devise_for :users do
     match '/users/sign_up' => 'devise/sessions#new'

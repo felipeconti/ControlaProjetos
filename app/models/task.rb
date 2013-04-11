@@ -1,6 +1,7 @@
 class Task < ActiveRecord::Base
+  attr_accessible :description, :hours, :status, :project_id, :user_id, :type_id
   belongs_to :project
   belongs_to :user
   belongs_to :type
-  attr_accessible :description, :hours, :status, :project_id, :user_id, :type_id
+  has_many :items
 end
