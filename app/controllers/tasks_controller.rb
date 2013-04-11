@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_filter :find_project
 
   def index
-    @tasks = @project.task.all
+    @tasks = @project.tasks.all
     respond_with(@tasks)
   end
 
@@ -42,7 +42,8 @@ class TasksController < ApplicationController
   private
 
   def find_project
-    @project = Project.find(params[:project_id])
+    @customer = Customer.find(params[:customer_id])
+    @project = @customer.projects.find(params[:project_id])
   end
 
 end
