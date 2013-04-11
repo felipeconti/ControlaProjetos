@@ -4,46 +4,48 @@ class ItemsController < ApplicationController
   before_filter :find_task
 
   def index
-    @items = @task.task.all
+    @items = @task.items.all
     respond_with(@items)
   end
 
   def show
-    @task = @task.items.find(params[:id])
-    respond_with(@task)
+    @item = @task.items.find(params[:id])
+    respond_with(@item)
   end
 
   def new
-    @task = @task.items.new
-    respond_with(@task)
+    @item = @task.items.new
+    respond_with(@item)
   end
 
   def edit
-    @task = @task.items.find(params[:id])
+    @item = @task.items.find(params[:id])
   end
 
   def create
-    @task = @task.items.new(params[:task])
-    @task.save
-    respond_with(@task, location: customer_project_task_path(@task))
+    @item = @task.items.new(params[:item])
+    @item.save
+    respond_with(@item, location: customer_project_task_path(@customer, @project, @item))
   end
 
   def update
-    @task = @task.items.find(params[:id])
-    @task.update_attributes(params[:task])
-    respond_with(@task, location: customer_project_task_path(@task))
+    @item = @task.items.find(params[:id])
+    @item.update_attributes(params[:item])
+    respond_with(@item, location: customer_project_task_path(@customer, @project, @item))
   end
 
   def destroy
-    @task = @task.items.find(params[:id])
-    @task.destroy
-    respond_with(@task, location: customer_project_task_path(@task))
+    @item = @task.items.find(params[:id])
+    @item.destroy
+    respond_with(@item, location: customer_project_task_path(@customer, @project, @item))
   end
 
   private
 
   def find_task
-    @task = Task.find(params[:task_id])
+    @customer = Customer.find(params[:customer_id])
+    @project = @customer.projects.find(params[:project_id])
+    @task = @project.tasks.find(params[:task_id])
   end
 
 end

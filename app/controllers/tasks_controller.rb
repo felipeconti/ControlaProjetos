@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   respond_to :json
+  respond_to :xml
   before_filter :find_project
 
   def index
@@ -24,19 +25,19 @@ class TasksController < ApplicationController
   def create
     @task = @project.tasks.new(params[:task])
     @task.save
-    respond_with(@task, location: customer_project_path(@project))
+    respond_with(@task, location: customer_project_path(@customer, @project))
   end
 
   def update
     @task = @project.tasks.find(params[:id])
     @task.update_attributes(params[:task])
-    respond_with(@task, location: customer_project_path(@project))
+    respond_with(@task, location: customer_project_path(@customer, @project))
   end
 
   def destroy
     @task = @project.tasks.find(params[:id])
     @task.destroy
-    respond_with(@task, location: customer_project_path(@project))
+    respond_with(@task, location: customer_project_path(@customer, @project))
   end
 
   private
