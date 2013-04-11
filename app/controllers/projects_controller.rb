@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   before_filter :find_customer
 
   def index
-    @projects = @customer.project.all
+    @projects = @customer.projects.all
     respond_with(@projects)
   end
 
