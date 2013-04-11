@@ -2,6 +2,9 @@ ControlaProjetos::Application.routes.draw do
 
   mount RailsAdmin::Engine => '/_admin', :as => 'rails_admin'
 
+  resources :types
+  #resources :users
+
   resources :customers do
     resources :projects do
       resources :tasks do
@@ -9,10 +12,6 @@ ControlaProjetos::Application.routes.draw do
       end
     end
   end
-
-  #resources :projects
-  #resources :tasks
-  #resources :items
 
   devise_for :users do
     match '/users/sign_up' => 'devise/sessions#new'
