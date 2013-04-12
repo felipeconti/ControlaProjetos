@@ -23,7 +23,9 @@ body {
     height: 100%;
     margin: 0 auto -30px;
 }
-#push,
+#push{
+    height: 50px;
+}
 #footer {
     height: 30px;
 }
@@ -35,10 +37,11 @@ body {
     margin: 5px 0;
 }
 
-#footer p {
-    position: absolute;
+.credits {
+    /*position: absolute;*/
     padding: 0;
     text-align: center;
+    aling: center;
     /*left: 0;
     width: 200px;*/
 }
