@@ -3,7 +3,6 @@ ControlaProjetos::Application.routes.draw do
   mount RailsAdmin::Engine => '/_admin', :as => 'rails_admin'
 
   resources :types
-  #resources :users
 
   resources :customers do
     resources :projects do
@@ -16,6 +15,8 @@ ControlaProjetos::Application.routes.draw do
   devise_for :users do
     match '/users/sign_up' => 'devise/sessions#new'
   end
+
+  resources :users, :controller => 'users_json'
 
   root :to => "customers#index"
 
