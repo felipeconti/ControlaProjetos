@@ -1,19 +1,27 @@
 pt-BR:
   sure: "Você tem certeza?"
 
-  activerecord:
-    models:
-      customer: Cliente
-    attributes:
+  simple_form:
+    labels:
       customer:
-        name: "Nome"
+        name: Nome
+        nickname: Apelido
+        address: Endereço
+        complement: Compelemento
+        neighborhood: Bairro
+        zip_code: Cep
+        phone: Tel.
+        mobile: Cel.
+        fax: Fax
+        cnpj_cpf: CNPJ/CPF
+        email: E-Mail
 
   customers:
     index:
-      title: "Clientes"
-      new: "Novo"
-      edit: "Editar"
-      destroy: "Apagar?"
+      title: Clientes
+      new: Novo
+      edit: Editar
+      destroy: Apagar?
   
   date:
     abbr_day_names:
