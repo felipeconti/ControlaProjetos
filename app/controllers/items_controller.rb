@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
-  respond_to :json
-  respond_to :xml
+  respond_to :html, :json, :xml
   before_filter :find_task
 
   def index

@@ -1,6 +1,6 @@
 class TypesController < ApplicationController
-  respond_to :json
-  respond_to :xml
+  respond_to :html, :json, :xml
+
   def index
     @types = Type.all
     respond_with(@types)

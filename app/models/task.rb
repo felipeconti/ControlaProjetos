@@ -4,4 +4,10 @@ class Task < ActiveRecord::Base
   belongs_to :user
   belongs_to :type
   has_many :items
+
+  default_scope includes(:items)
+  def serializable_hash(options = {})
+    super include: :items
+  end
+
 end
