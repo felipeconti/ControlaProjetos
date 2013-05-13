@@ -4,27 +4,12 @@
   <h1><%= link_to "Todos Clientes > ", root_path, class: 'small' %> <%= @customer.name %> </h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-  <dd><%= @customer.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:nickname) %>:</strong></dt>
-  <dd><%= @customer.nickname %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
-  <dd><%= @customer.address %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:complement) %>:</strong></dt>
-  <dd><%= @customer.complement %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:neighborhood) %>:</strong></dt>
-  <dd><%= @customer.neighborhood %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:zip_code) %>:</strong></dt>
-  <dd><%= @customer.zip_code %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
-  <dd><%= @customer.phone %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:mobile) %>:</strong></dt>
-  <dd><%= @customer.mobile %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:fax) %>:</strong></dt>
-  <dd><%= @customer.fax %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:cnpj_cpf) %>:</strong></dt>
-  <dd><%= @customer.cnpj_cpf %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
-  <dd><%= @customer.email %></dd>
-</dl>
+<h2>Projetos</h2>
+
+<table class="table table-hover">
+  <tbody>
+  <%= render @customer.projects %>
+  </tbody>
+</table>
+
+<%= link_to "Novo projeto", new_customer_project_path(@customer), class: 'btn btn-primary' %>

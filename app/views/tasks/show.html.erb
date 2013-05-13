@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<div class="page-header">
+  <h1><%= link_to "#{@project.name} >", customer_project_path(@customer, @project), class: 'small' %> <%= @task.description %> </h1>
+</div>
+
 <p>
   <b>Description:</b>
   <%= @task.description %>
@@ -31,5 +35,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<%= link_to 'Edit', edit_customer_project_task_path(@customer, @project, @task) %> |
+<%= link_to 'Back', customer_project_task_path(@customer, @project) %>

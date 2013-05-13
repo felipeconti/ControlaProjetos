@@ -6,4 +6,6 @@ class Customer < ActiveRecord::Base
   def serializable_hash(options = {})
     super include: :projects
   end
+
+  validates :name, presence: true
 end
