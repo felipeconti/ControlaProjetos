@@ -1,49 +1,30 @@
-<%= form_for(@item) do |f| %>
-  <% if @item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+<%= simple_form_for [@customer, @project, @task, @item], :html => { :class => 'form-horizontal' } do |f| %>
 
-      <ul>
-      <% @item.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+    <% if @item.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@item.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+          <ul>
+            <% @item.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <%= f.input :description %>
+    <%= f.input :hour_estimated %>
+    <%= f.input :hour_used %>
+    <%= f.input :date_start %>
+    <%= f.input :date_end %>
+    <%= f.input :task_id %>
+    <%= f.input :type_id %>
+    <%= f.input :user_id %>
+
+    <div class="form-actions">
+      <%= f.button :submit, :class => 'btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  customer_project_task_path(@customer, @project, @task), :class => 'btn' %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :hour_estimated %><br />
-    <%= f.text_field :hour_estimated %>
-  </div>
-  <div class="field">
-    <%= f.label :hour_used %><br />
-    <%= f.text_field :hour_used %>
-  </div>
-  <div class="field">
-    <%= f.label :date_start %><br />
-    <%= f.date_select :date_start %>
-  </div>
-  <div class="field">
-    <%= f.label :date_end %><br />
-    <%= f.date_select :date_end %>
-  </div>
-  <div class="field">
-    <%= f.label :task_id %><br />
-    <%= f.text_field :task_id %>
-  </div>
-  <div class="field">
-    <%= f.label :type_id %><br />
-    <%= f.text_field :type_id %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

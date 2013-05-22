@@ -24,19 +24,19 @@ class ItemsController < ApplicationController
   def create
     @item = @task.items.new(params[:item])
     @item.save
-    respond_with(@item, location: customer_project_task_path(@customer, @project, @item))
+    respond_with(@item, location: customer_project_task_path(@customer, @project, @task))
   end
 
   def update
     @item = @task.items.find(params[:id])
     @item.update_attributes(params[:item])
-    respond_with(@item, location: customer_project_task_path(@customer, @project, @item))
+    respond_with(@item, location: customer_project_task_path(@customer, @project, @task))
   end
 
   def destroy
     @item = @task.items.find(params[:id])
     @item.destroy
-    respond_with(@item, location: customer_project_task_path(@customer, @project, @item))
+    respond_with(@item, location: customer_project_task_path(@customer, @project, @task))
   end
 
   private
