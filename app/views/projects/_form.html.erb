@@ -1,11 +1,25 @@
 <%= simple_form_for [@customer, @project], :html => { :class => 'form-horizontal' } do |f| %>
 
-    <%= f.input :name %>
-    <%= f.input :brainstorm %>
+    <% if @project.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
-  <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                customer_path(@customer), :class => 'btn' %>
-  </div>
+          <ul>
+            <% @project.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <%= f.input :name %>
+    <%= f.input :date_begin %>
+    <%= f.input :date_end %>
+    <%= f.input :specification %>
+
+    <div class="form-actions">
+        <%= f.button :submit, :class => 'btn-primary' %>
+        <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                    customer_path(@customer), :class => 'btn' %>
+    </div>
 <% end %>

@@ -1,16 +1,20 @@
 <%- model_class = Customer -%>
+
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
+
+<%= link_to "Novo Cliente", new_customer_path, class: 'btn btn-primary' %>
+
 <table class="table table-hover">
   <thead>
   <tr>
     <th><%= model_class.human_attribute_name(:name) %></th>
     <th><%= model_class.human_attribute_name(:nickname) %></th>
     <th><%= model_class.human_attribute_name(:cnpj_cpf) %></th>
+    <th><%= model_class.human_attribute_name(:email) %></th>
     <th><%= model_class.human_attribute_name(:phone) %></th>
     <th><%= model_class.human_attribute_name(:mobile) %></th>
-    <th><%= model_class.human_attribute_name(:email) %></th>
     <th><%=t '.actions', :default => t("helpers.actions") %></th>
   </tr>
   </thead>
@@ -20,9 +24,9 @@
         <td><%= link_to customer.name, customer_path(customer) %></td>
         <td><%= customer.nickname %></td>
         <td><%= customer.cnpj_cpf %></td>
+        <td><%= customer.email %></td>
         <td><%= customer.phone %></td>
         <td><%= customer.mobile %></td>
-        <td><%= customer.email %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_customer_path(customer), :class => 'btn btn-mini' %>
@@ -36,5 +40,3 @@
   <% end %>
   </tbody>
 </table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")), new_customer_path, :class => 'btn btn-primary' %>

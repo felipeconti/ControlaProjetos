@@ -4,19 +4,17 @@
   <h1><%= link_to "#{@customer.name} >", customer_path(@customer), class: 'small' %> <%= @project.name %> </h1>
 </div>
 
-<% if not @project.brainstorm.nil? %>
-    <h3>Brainstorm</h3>
-    <textarea rows="100" readonly><%= @project.brainstorm %></textarea>
-    <br>
-    <br>
-<% end %>
+<p id="notice"><%= notice %></p>
 
-<h2>Tarefas</h2>
+<div class="project-detail">
+    <% if not @project.specification.nil? %>
+        <h3>Especificação</h3>
+          <textarea rows="100" cols="70" readonly><%= @project.specification %></textarea>
+        <br/>
+    <% end %>
+</div>
 
-<table class="table table-hover">
-  <tbody>
-  <%= render @project.tasks %>
-  </tbody>
-</table>
-
-<%= link_to "Nova tarefa", new_customer_project_task_path(@customer, @project), class: 'btn btn-primary' %>
+<div class="task-list">
+  <%= link_to "Nova Tarefa", new_customer_project_task_path(@customer, @project), class: 'btn btn-primary' %>
+  <%= render :partial => 'tasks/list' %>
+</div>

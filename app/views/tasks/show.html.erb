@@ -6,12 +6,5 @@
 
 <p id="notice"><%= notice %></p>
 
-<h2>Itens</h2>
-
-<table class="table table-hover">
-  <tbody>
-  <%= render @task.items %>
-  </tbody>
-</table>
-
-<%= link_to "Novo item", new_customer_project_task_item_path(@customer, @project, @task), class: 'btn btn-primary' %>
+<%= link_to "Novo Item", new_customer_project_task_item_path(@customer, @project, @task), class: 'btn btn-primary' %>
+<%= render :partial => 'items/list' %>
