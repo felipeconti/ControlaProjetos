@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130527032608) do
+ActiveRecord::Schema.define(:version => 20130527023350) do
 
   create_table "customers", :force => true do |t|
     t.string   "name"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20130527032608) do
     t.text     "brainstorm"
   end
 
+  add_index "projects", ["brainstorm"], :name => "index_projects_on_brainstorm"
   add_index "projects", ["customer_id"], :name => "index_projects_on_customer_id"
   add_index "projects", ["date_begin"], :name => "index_projects_on_date_begin"
   add_index "projects", ["date_end"], :name => "index_projects_on_date_end"
