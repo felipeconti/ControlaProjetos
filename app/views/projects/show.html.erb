@@ -4,6 +4,13 @@
   <h1><%= link_to "#{@customer.name} >", customer_path(@customer), class: 'small' %> <%= @project.name %> </h1>
 </div>
 
+<% if not @project.brainstorm.nil? %>
+    <h3>Brainstorm</h3>
+    <%= simple_format(@project.brainstorm) %>
+    <br>
+    <br>
+<% end %>
+
 <h2>Tarefas</h2>
 
 <table class="table table-hover">
