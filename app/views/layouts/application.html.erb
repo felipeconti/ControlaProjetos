@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= content_for?(:title) ? yield(:title) : "Controla Projeto" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "Controla Projetos" %></title>
   <%= csrf_meta_tags %>
 
   <%= stylesheet_link_tag "application", :media => "all" %>
@@ -20,7 +20,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="/">Controla Projeto</a>
+          <a class="brand" href="/">Controla Projetos</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav pull-right">
               <% if user_signed_in? %>

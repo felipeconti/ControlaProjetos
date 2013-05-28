@@ -1,12 +1,15 @@
 <tr>
   <td><%= link_to item.title, customer_project_task_item_path(@customer, @project, @task, item) %></td>
-  <td><%= item.hour_estimated %></td>
-  <td><%= item.hour_used %></td>
   <td><%= item.date_start %></td>
   <td><%= item.date_end %></td>
-  <td><%= item.task_id %></td>
+  <td><%= item.hour_estimated %></td>
+  <td><%= item.hour_used %></td>
+  <% if (item.user_id) %>
+      <td><%= item.user.email %></td>
+  <%else%>
+      <td><%= item.user_id %></td>
+  <%end%>
   <td><%= item.type_id %></td>
-  <td><%= item.user_id %></td>
 
   <td>
     <%= link_to t('.edit', :default => t("helpers.links.edit")),

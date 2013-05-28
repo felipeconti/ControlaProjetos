@@ -13,10 +13,9 @@
     <% end %>
 
     <%= f.input :title %>
+    <%= f.association :user, collection: User.all.map(&:email), prompt: t(:select_user) %>
     <%= f.input :hours %>
     <%= f.input :status %>
-    <%= f.input :project_id %>
-    <%= f.input :user_id %>
     <%= f.input :type_id %>
 
     <div class="form-actions">

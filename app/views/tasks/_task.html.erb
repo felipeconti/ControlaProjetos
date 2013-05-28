@@ -1,8 +1,12 @@
 <tr>
   <td><%= link_to task.title, customer_project_task_path(@customer, @project, task) %></td>
+  <% if (task.user_id) %>
+      <td><%= task.user.email %></td>
+  <%else%>
+      <td><%= task.user_id %></td>
+  <%end%>
   <td><%= task.hours %></td>
   <td><%= task.status %></td>
-  <td><%= task.user_id %></td>
   <td><%= task.type_id %></td>
   <td>
     <%= link_to t('.edit', :default => t("helpers.links.edit")),
