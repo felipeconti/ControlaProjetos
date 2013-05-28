@@ -13,7 +13,10 @@
     <% end %>
 
     <%= f.input :title %>
-    <%= f.association :user, collection: User.all.map(&:email), prompt: t(:select_user) %>
+    <%= f.label :user_id %>
+    <%= f.select :user_id,
+                 User.all.map { |u| [u.email, u.id] },
+                 :prompt => t(:select_user) %>
     <%= f.input :hours %>
     <%= f.input :status %>
     <%= f.input :type_id %>
