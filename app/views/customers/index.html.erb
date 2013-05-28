@@ -11,7 +11,7 @@
   <tr>
     <th><%= model_class.human_attribute_name(:name) %></th>
     <th><%= model_class.human_attribute_name(:nickname) %></th>
-    <th><%= model_class.human_attribute_name(:cnpj_cpf) %></th>
+    <th><%= model_class.human_attribute_name(:enrollment) %></th>
     <th><%= model_class.human_attribute_name(:email) %></th>
     <th><%= model_class.human_attribute_name(:phone) %></th>
     <th><%= model_class.human_attribute_name(:mobile) %></th>
@@ -23,7 +23,7 @@
       <tr>
         <td><%= link_to customer.name, customer_path(customer) %></td>
         <td><%= customer.nickname %></td>
-        <td><%= customer.cnpj_cpf %></td>
+        <td><%= customer.enrollment %></td>
         <td><%= customer.email %></td>
         <td><%= customer.phone %></td>
         <td><%= customer.mobile %></td>

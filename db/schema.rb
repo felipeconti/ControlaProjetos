@@ -11,26 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130527184647) do
+ActiveRecord::Schema.define(:version => 20130527234116) do
 
   create_table "customers", :force => true do |t|
     t.string   "name"
     t.string   "nickname"
     t.string   "address"
-    t.text     "complement"
+    t.string   "complement"
     t.string   "neighborhood"
     t.integer  "zip_code"
     t.integer  "phone"
     t.integer  "mobile"
     t.integer  "fax"
-    t.integer  "cnpj_cpf"
+    t.integer  "enrollment"
     t.string   "email"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
 
   create_table "items", :force => true do |t|
-    t.string   "description"
+    t.string   "title"
     t.float    "hour_estimated"
     t.float    "hour_used"
     t.date     "date_start"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20130527184647) do
     t.integer  "user_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.text     "description"
   end
 
   add_index "items", ["task_id"], :name => "index_items_on_task_id"
@@ -74,14 +75,14 @@ ActiveRecord::Schema.define(:version => 20130527184647) do
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "tasks", :force => true do |t|
-    t.string   "description"
+    t.string   "title"
     t.integer  "hours"
     t.integer  "status"
     t.integer  "project_id"
     t.integer  "user_id"
     t.integer  "type_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "tasks", ["project_id"], :name => "index_tasks_on_project_id"

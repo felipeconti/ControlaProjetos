@@ -1,8 +1,13 @@
 <div class="page-header">
-  <h1><%= link_to "#{@task.description} >", customer_project_task_path(@customer, @project, @task), class: 'small' %> <%= @item.description %> </h1>
+  <h1><%= link_to "#{@task.title} >", customer_project_task_path(@customer, @project, @task), class: 'small' %> <%= @item.title %> </h1>
 </div>
 
 <p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @item.title %>
+</p>
 
 <p>
   <b>Description:</b>

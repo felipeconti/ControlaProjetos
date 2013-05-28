@@ -7,18 +7,39 @@ pt-BR:
         name: Nome
         nickname: Apelido
         address: Endereço
-        complement: Compelemento
+        complement: Complemento
         neighborhood: Bairro
-        zip_code: Cep
+        zip_code: CEP
         phone: Tel.
         mobile: Cel.
         fax: Fax
-        cnpj_cpf: CNPJ/CPF
+        enrollment: CNPJ/CPF
         email: E-Mail
 
   customers:
     index:
       title: Clientes
+      new: Novo
+      edit: Editar
+      destroy: Apagar?
+
+  projects:
+    list:
+      title: Projetos
+      new: Novo
+      edit: Editar
+      destroy: Apagar?
+
+  tasks:
+    list:
+      title: Tarefas
+      new: Novo
+      edit: Editar
+      destroy: Apagar?
+
+  items:
+    list:
+      title: Itens
       new: Novo
       edit: Editar
       destroy: Apagar?

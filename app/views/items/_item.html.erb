@@ -1,5 +1,5 @@
 <tr>
-  <td><%= link_to item.description, customer_project_task_item_path(@customer, @project, @task, item) %></td>
+  <td><%= link_to item.title, customer_project_task_item_path(@customer, @project, @task, item) %></td>
   <td><%= item.hour_estimated %></td>
   <td><%= item.hour_used %></td>
   <td><%= item.date_start %></td>

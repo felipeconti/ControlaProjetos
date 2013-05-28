@@ -1,7 +1,7 @@
 <%- model_class = Task -%>
 
 <div class="page-header">
-  <h1><%= link_to "#{@project.name} >", customer_project_path(@customer, @project), class: 'small' %> <%= @task.description %> </h1>
+  <h1><%= link_to "#{@project.name} >", customer_project_path(@customer, @project), class: 'small' %> <%= @task.title %> </h1>
 </div>
 
 <p id="notice"><%= notice %></p>
