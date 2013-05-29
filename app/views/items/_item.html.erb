@@ -9,10 +9,10 @@
   <%else%>
       <td><%= item.user_id %></td>
   <%end%>
-  <% if (item.type) %>
-      <td><%= item.type.description %></td>
+  <% if (item.state) %>
+      <td><%= item.state.description %></td>
   <%else%>
-      <td><%= item.type_id %></td>
+      <td><%= item.state_id %></td>
   <%end%>
 
   <td>

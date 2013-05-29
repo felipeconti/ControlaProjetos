@@ -5,12 +5,16 @@
   <%else%>
       <td><%= task.user_id %></td>
   <%end%>
-  <td><%= task.hours %></td>
-  <td><%= task.status %></td>
   <% if (task.type) %>
       <td><%= task.type.description %></td>
   <%else%>
       <td><%= task.type_id %></td>
+  <%end%>
+  <td><%= task.hours %></td>
+  <% if (task.state) %>
+      <td><%= task.state.description %></td>
+  <%else%>
+      <td><%= task.state_id %></td>
   <%end%>
   <td>
     <%= link_to t('.edit', :default => t("helpers.links.edit")),

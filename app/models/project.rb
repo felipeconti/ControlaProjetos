@@ -1,5 +1,6 @@
 class Project < ActiveRecord::Base
-  attr_accessible :name, :customer_id, :date_begin, :date_end, :specification
+  attr_accessible :name, :date_begin, :date_end, :specification
+
   belongs_to :customer
   has_many :tasks
 
@@ -8,4 +9,5 @@ class Project < ActiveRecord::Base
     super include: :tasks
   end
 
+  validates :name, :date_begin, presence: true
 end

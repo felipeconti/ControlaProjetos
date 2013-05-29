@@ -1,8 +1,10 @@
 class Task < ActiveRecord::Base
-  attr_accessible :title, :hours, :status, :project_id, :user_id, :type_id
+  attr_accessible :title, :hours, :state_id, :user_id, :type_id
+
   belongs_to :project
   belongs_to :user
   belongs_to :type
+  belongs_to :state
   has_many :items
 
   default_scope includes(:items)
@@ -10,4 +12,5 @@ class Task < ActiveRecord::Base
     super include: :items
   end
 
+  validates :title, :state_id, :user_id, :type_id, presence: true
 end

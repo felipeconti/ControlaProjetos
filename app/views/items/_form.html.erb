@@ -13,7 +13,6 @@
     <% end %>
 
     <%= f.input :title %>
-    <%= f.input :description %>
     <%= f.input :date_start %>
     <%= f.input :date_end %>
     <%= f.input :hour_estimated %>
@@ -22,10 +21,11 @@
     <%= f.select :user_id,
                  User.all.map { |u| [u.email, u.id] },
                  :prompt => t(:select_user) %>
-    <%= f.label :type_id %>
-    <%= f.select :type_id,
-                 Type.all.map { |u| [u.description, u.id] },
-                 :prompt => t(:select_type) %>
+    <%= f.label :state_id %>
+    <%= f.select :state_id,
+                 State.all.map { |u| [u.description, u.id] },
+                 :prompt => t(:select_state) %>
+    <%= f.input :description %>
 
     <div class="form-actions">
       <%= f.button :submit, :class => 'btn-primary' %>
