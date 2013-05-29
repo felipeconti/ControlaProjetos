@@ -7,7 +7,11 @@
   <%end%>
   <td><%= task.hours %></td>
   <td><%= task.status %></td>
-  <td><%= task.type_id %></td>
+  <% if (task.type) %>
+      <td><%= task.type.description %></td>
+  <%else%>
+      <td><%= task.type_id %></td>
+  <%end%>
   <td>
     <%= link_to t('.edit', :default => t("helpers.links.edit")),
                 edit_customer_project_task_path(@customer, @project, task), :class => 'btn btn-mini' %>

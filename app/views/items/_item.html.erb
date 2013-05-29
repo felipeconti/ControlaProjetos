@@ -9,7 +9,11 @@
   <%else%>
       <td><%= item.user_id %></td>
   <%end%>
-  <td><%= item.type_id %></td>
+  <% if (item.type) %>
+      <td><%= item.type.description %></td>
+  <%else%>
+      <td><%= item.type_id %></td>
+  <%end%>
 
   <td>
     <%= link_to t('.edit', :default => t("helpers.links.edit")),

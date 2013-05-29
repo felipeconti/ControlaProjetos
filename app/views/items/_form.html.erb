@@ -22,7 +22,10 @@
     <%= f.select :user_id,
                  User.all.map { |u| [u.email, u.id] },
                  :prompt => t(:select_user) %>
-    <%= f.input :type_id %>
+    <%= f.label :type_id %>
+    <%= f.select :type_id,
+                 Type.all.map { |u| [u.description, u.id] },
+                 :prompt => t(:select_type) %>
 
     <div class="form-actions">
       <%= f.button :submit, :class => 'btn-primary' %>
