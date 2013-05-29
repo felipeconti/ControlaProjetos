@@ -4,24 +4,15 @@
   <td><%= item.date_end %></td>
   <td><%= item.hour_estimated %></td>
   <td><%= item.hour_used %></td>
-  <% if (item.user) %>
-      <td><%= item.user.email %></td>
-  <%else%>
-      <td><%= item.user_id %></td>
-  <%end%>
-  <% if (item.state) %>
-      <td><%= item.state.description %></td>
-  <%else%>
-      <td><%= item.state_id %></td>
-  <%end%>
-
+  <td><%= item.user.email %></td>
+  <td><%= item.state.description %></td>
   <td>
-    <%= link_to t('.edit', :default => t("helpers.links.edit")),
+    <%= link_to t('edit', :default => t("helpers.links.edit")),
                 edit_customer_project_task_item_path(@customer, @project, @task, item), :class => 'btn btn-mini' %>
-    <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+    <%= link_to t('destroy', :default => t("helpers.links.destroy")),
                 customer_project_task_item_path(@customer, @project, @task, item),
                 :method => :delete,
-                :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => t('sure'))) },
                 :class => 'btn btn-mini btn-danger' %>
   </td>
 </tr>

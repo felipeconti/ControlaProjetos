@@ -1,4 +1,8 @@
 pt-BR:
+  actions: "Ação"
+  edit: "Editar"
+  cancel: "Cancelar"
+  destroy: "Apagar"
   sure: "Você tem certeza?"
 
   simple_form:
@@ -16,34 +20,6 @@ pt-BR:
         enrollment: CNPJ/CPF
         email: E-Mail
 
-  customers:
-    index:
-      title: Clientes
-      new: Novo
-      edit: Editar
-      destroy: Apagar?
-
-  projects:
-    list:
-      title: Projetos
-      new: Novo
-      edit: Editar
-      destroy: Apagar?
-
-  tasks:
-    list:
-      title: Tarefas
-      new: Novo
-      edit: Editar
-      destroy: Apagar?
-
-  items:
-    list:
-      title: Itens
-      new: Novo
-      edit: Editar
-      destroy: Apagar?
-  
   date:
     abbr_day_names:
     - Dom

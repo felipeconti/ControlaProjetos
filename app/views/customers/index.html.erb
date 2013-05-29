@@ -15,7 +15,7 @@
     <th><%= model_class.human_attribute_name(:email) %></th>
     <th><%= model_class.human_attribute_name(:phone) %></th>
     <th><%= model_class.human_attribute_name(:mobile) %></th>
-    <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    <th><%=t 'actions', :default => t("helpers.actions") %></th>
   </tr>
   </thead>
   <tbody>
@@ -28,12 +28,12 @@
         <td><%= customer.phone %></td>
         <td><%= customer.mobile %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+          <%= link_to t('edit', :default => t("helpers.links.edit")),
                       edit_customer_path(customer), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <%= link_to t('destroy', :default => t("helpers.links.destroy")),
                       customer_path(customer),
                       :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => t("sure"))) },
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => t('sure'))) },
                       :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>

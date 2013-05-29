@@ -10,11 +10,6 @@
 </p>
 
 <p>
-  <b>Description:</b>
-  <%= simple_format(@item.description) %>
-</p>
-
-<p>
   <b>Hour estimated:</b>
   <%= @item.hour_estimated %>
 </p>
@@ -35,20 +30,19 @@
 </p>
 
 <p>
-  <b>Task:</b>
-  <%= @item.task_id %>
-</p>
-
-<p>
-  <b>Type:</b>
-  <%= @item.type_id %>
-</p>
-
-<p>
   <b>User:</b>
-  <%= @item.user_id %>
+  <%= @item.user.email %>
 </p>
 
+<p>
+  <b>State:</b>
+  <%= @item.state.description %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= simple_format(@item.description) %>
+</p>
 
 <%= link_to 'Edit', edit_customer_project_task_item_path(@customer, @project, @task, @item) %> |
 <%= link_to 'Back', customer_project_task_path(@customer, @project, @task) %>
