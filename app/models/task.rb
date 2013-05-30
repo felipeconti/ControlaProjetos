@@ -12,5 +12,5 @@ class Task < ActiveRecord::Base
     super include: :items
   end
 
-  validates :title, :state_id, :user_id, :type_id, presence: true
+  validates :title, :state_id, :type_id, presence: true
 end

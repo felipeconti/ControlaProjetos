@@ -21,7 +21,7 @@ class MeetingsController < InheritedResources::Base
   end
 
   def create
-    @meeting = Meeting.new(params[:customer])
+    @meeting = Meeting.new(params[:meeting])
     @meeting.save
     respond_with(@meeting)
   end

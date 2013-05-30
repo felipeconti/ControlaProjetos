@@ -6,5 +6,5 @@ class Item < ActiveRecord::Base
   belongs_to :state
   belongs_to :user
 
-  validates :title, :date_start, :hour_estimated, :user_id, :state_id, presence: true
+  validates :title, :date_start, :state_id, presence: true
 end
