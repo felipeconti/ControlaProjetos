@@ -1,0 +1,38 @@
+<%- model_class = Meeting -%>
+
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+
+<%= link_to "Nova Reunião", new_meeting_path, class: 'btn btn-primary' %>
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th><%= model_class.human_attribute_name(:title) %></th>
+    <th><%= model_class.human_attribute_name(:date_init) %></th>
+    <th><%= model_class.human_attribute_name(:date_end) %></th>
+    <th><%= model_class.human_attribute_name(:desctiption) %></th>
+    <th><%=t 'actions', :default => t("helpers.actions") %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @meetings.each do |meeting| %>
+      <tr>
+        <td><%= link_to meeting.title, meeting_path(meeting) %></td>
+        <td><%= meeting.date_init %></td>
+        <td><%= meeting.date_end %></td>
+        <td><%= meeting.desctiption %></td>
+        <td>
+          <%= link_to t('edit', :default => t("helpers.links.edit")),
+                      edit_meeting_path(meeting), :class => 'btn btn-mini' %>
+          <%= link_to t('destroy', :default => t("helpers.links.destroy")),
+                      meeting_path(meeting),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => t('sure'))) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

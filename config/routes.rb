@@ -3,6 +3,7 @@ ControlaProjetos::Application.routes.draw do
   mount RailsAdmin::Engine => '/_admin', :as => 'rails_admin'
 
   resources :types
+  resources :meetings
 
   resources :customers do
     resources :projects do

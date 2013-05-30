@@ -1,0 +1,25 @@
+<%= simple_form_for [@meeting], :html => { :class => 'form-horizontal' } do |f| %>
+
+    <% if @meeting.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@meeting.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+          <ul>
+            <% @meeting.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <%= f.input :title %>
+    <%= f.input :date_init %>
+    <%= f.input :date_end %>
+    <%= f.input :desctiption %>
+
+    <div class="form-actions">
+      <%= f.button :submit, :class => 'btn-primary' %>
+      <%= link_to t('cancel', :default => t("helpers.links.cancel")),
+                  meetings_path, :class => 'btn' %>
+    </div>
+<% end %>
