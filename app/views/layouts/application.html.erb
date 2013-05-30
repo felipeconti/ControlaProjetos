@@ -22,6 +22,10 @@
           </a>
           <a class="brand" href="/">Controla Projetos</a>
           <div class="container-fluid nav-collapse">
+            <ul class="nav nav-left">
+              <li><%= link_to "Clientes", customers_path  %></li>
+              <li><%= link_to "Reuniões", customers_path  %></li>
+            </ul>
             <ul class="nav pull-right">
               <% if user_signed_in? %>
                   <li class="dropdown">
