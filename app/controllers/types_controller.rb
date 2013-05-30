@@ -21,14 +21,14 @@ class TypesController < ApplicationController
   end
 
   def create
-    @type = Type.new(params[:customer])
+    @type = Type.new(params[:type])
     @type.save
     respond_with(@type)
   end
 
   def update
     @type = Type.find(params[:id])
-    @type.update_attributes(params[:customer])
+    @type.update_attributes(params[:type])
     respond_with(@type)
   end
 

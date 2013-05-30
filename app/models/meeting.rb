@@ -1,3 +1,3 @@
 class Meeting < ActiveRecord::Base
-  attr_accessible :date_end, :date_init, :desctiption, :title
+  attr_accessible :date_end, :date_init, :description, :title
 end

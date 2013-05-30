@@ -2,7 +2,7 @@
 
     <% if @meeting.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@meeting.errors.count, "error") %> prohibited this customer from being saved:</h2>
+          <h2><%= pluralize(@meeting.errors.count, "error") %> prohibited this meeting from being saved:</h2>
 
           <ul>
             <% @meeting.errors.full_messages.each do |msg| %>
@@ -15,11 +15,10 @@
     <%= f.input :title %>
     <%= f.input :date_init %>
     <%= f.input :date_end %>
-    <%= f.input :desctiption %>
+    <%= f.input :description %>
 
     <div class="form-actions">
       <%= f.button :submit, :class => 'btn-primary' %>
-      <%= link_to t('cancel', :default => t("helpers.links.cancel")),
-                  meetings_path, :class => 'btn' %>
+      <%= link_to t('cancel', :default => t("helpers.links.cancel")), meetings_path, :class => 'btn' %>
     </div>
 <% end %>

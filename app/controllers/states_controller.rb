@@ -21,14 +21,14 @@ class StatesController < ApplicationController
   end
 
   def create
-    @state = State.new(params[:customer])
+    @state = State.new(params[:state])
     @state.save
     respond_with(@State)
   end
 
   def update
     @state = State.find(params[:id])
-    @state.update_attributes(params[:customer])
+    @state.update_attributes(params[:state])
     respond_with(@state)
   end
 
