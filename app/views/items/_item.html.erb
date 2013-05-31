@@ -4,7 +4,11 @@
   <td><%= item.date_end %></td>
   <td><%= item.hour_estimated %></td>
   <td><%= item.hour_used %></td>
-  <td><%= item.user.email %></td>
+  <% if item.user.nil? %>
+      <td> - </td>
+  <% else %>
+      <td><%= item.user.email %></td>
+  <% end %>
   <td><%= item.state.description %></td>
   <td>
     <%= link_to t('edit', :default => t("helpers.links.edit")),

@@ -31,7 +31,9 @@
 
 <p>
   <b>User:</b>
-  <%= @item.user.email %>
+  <% if not @item.user.nil? %>
+    <%= @item.user.email %>
+  <% end %>
 </p>
 
 <p>

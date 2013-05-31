@@ -1,6 +1,10 @@
 <tr>
   <td><%= link_to task.title, customer_project_task_path(@customer, @project, task) %></td>
-  <td><%= task.user.email %></td>
+  <% if task.user.nil? %>
+      <td> - </td>
+  <% else %>
+    <td><%= task.user.email %></td>
+  <% end %>
   <td><%= task.type.description %></td>
   <td><%= task.hours %></td>
   <td><%= task.state.description %></td>
