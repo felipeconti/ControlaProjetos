@@ -7,4 +7,10 @@ class Item < ActiveRecord::Base
   belongs_to :user
 
   validates :title, :date_start, :state_id, presence: true
+
+  after_initialize :init
+
+  def init
+    self.state_id  ||= 1
+  end
 end

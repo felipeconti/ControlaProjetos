@@ -1,0 +1,35 @@
+<div class="page-header">
+  <h1><%= link_to "#{@meeting.title} >", meeting_path(@meeting), class: 'small' %> <%= @item.subject %> </h1>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Subject:</b>
+  <%= @item.subject %>
+</p>
+
+<p>
+  <b>Decision:</b>
+  <%= simple_format(@item.decision) %>
+</p>
+
+<p>
+  <b>User:</b>
+  <% if not @item.user.nil? %>
+      <%= @item.user.email %>
+  <% end %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @item.state.description %>
+</p>
+
+<p>
+  <b>date_state:</b>
+  <%= @item.date_state %>
+</p>
+
+<%= link_to 'Edit', edit_meeting_item_path(@meeting, @item) %> |
+<%= link_to 'Back', meeting_path(@meeting) %>

@@ -1,0 +1,19 @@
+<tr>
+  <td><%= link_to meeting_item.subject, meeting_meeting_item_path(@meeting, meeting_item) %></td>
+  <% if meeting_item.user.nil? %>
+      <td> - </td>
+  <% else %>
+      <td><%= meeting_item.user.email %></td>
+  <% end %>
+  <td><%= meeting_item.state.description %></td>
+  <td><%= meeting_item.date_state %></td>
+  <td>
+    <%= link_to t('edit', :default => t("helpers.links.edit")),
+                edit_meeting_meeting_item_path(@meeting, meeting_item), :class => 'btn btn-mini' %>
+    <%= link_to t('destroy', :default => t("helpers.links.destroy")),
+                meeting_meeting_item_path(@meeting, meeting_item),
+                :method => :delete,
+                :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => t('sure'))) },
+                :class => 'btn btn-mini btn-danger' %>
+  </td>
+</tr>

@@ -13,4 +13,10 @@ class Task < ActiveRecord::Base
   end
 
   validates :title, :state_id, :type_id, presence: true
+
+  after_initialize :init
+
+  def init
+    self.state_id  ||= 1
+  end
 end

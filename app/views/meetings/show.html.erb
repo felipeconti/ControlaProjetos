@@ -1,25 +1,11 @@
+<%- model_class = Meeting -%>
+
+<div class="page-header">
+  <h1><%= link_to "Todas Reuniões> ", meetings_path, class: 'small' %> <%= @meeting.title %> </h1>
+</div>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @meeting.title %>
-</p>
+<%= link_to "Novo Item", new_meeting_meeting_item_path(@meeting), class: 'btn btn-primary' %>
 
-<p>
-  <b>Date init:</b>
-  <%= @meeting.date_init %>
-</p>
-
-<p>
-  <b>Date end:</b>
-  <%= @meeting.date_end %>
-</p>
-
-<p>
-  <b>Desctiption:</b>
-  <%= simple_format(@meeting.description) %>
-</p>
-
-
-<%= link_to 'Edit', edit_meeting_path(@meeting) %> |
-<%= link_to 'Back', meetings_path %>
+<%= render :partial => 'meeting_items/list' %>

@@ -47,6 +47,11 @@ pt-BR:
         date_init: Data Inicial
         description: Descrição
         title: Título
+
+      meeting_item:
+        subject: Assunto
+        decision: Decisão
+        date_state: Data State
       
       user:
         email: E-Mail
