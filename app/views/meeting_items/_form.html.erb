@@ -12,6 +12,10 @@
   <% end %>
 
   <%= f.input :subject %>
+    <%= f.label :customer_id %>
+    <%= f.select :customer_id,
+                 Customer.all.map { |u| [u.name, u.id] },
+                 :prompt => t(:select_customer) %>
   <%= f.input :decision %>
   <%= f.label :user_id %>
   <%= f.select :user_id,

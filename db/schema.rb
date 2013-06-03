@@ -47,16 +47,18 @@ ActiveRecord::Schema.define(:version => 20130603192439) do
   add_index "items", ["user_id"], :name => "index_items_on_user_id"
 
   create_table "meeting_items", :force => true do |t|
+    t.integer  "customer_id"
     t.string   "subject"
     t.text     "decision"
     t.integer  "meeting_id"
     t.integer  "user_id"
     t.integer  "state_id"
     t.date     "date_state"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
+  add_index "meeting_items", ["customer_id"], :name => "index_meeting_items_on_customer_id"
   add_index "meeting_items", ["meeting_id"], :name => "index_meeting_items_on_meeting_id"
   add_index "meeting_items", ["state_id"], :name => "index_meeting_items_on_state_id"
   add_index "meeting_items", ["user_id"], :name => "index_meeting_items_on_user_id"

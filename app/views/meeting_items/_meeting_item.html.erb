@@ -1,5 +1,11 @@
 <tr>
   <td><%= link_to meeting_item.subject, meeting_meeting_item_path(@meeting, meeting_item) %></td>
+  <% if meeting_item.customer.nil? %>
+      <td> - </td>
+  <% else %>
+      <td><%= meeting_item.customer.name %></td>
+  <% end %>
+  <td><%= cutString meeting_item.decision, 20 %></td>
   <% if meeting_item.user.nil? %>
       <td> - </td>
   <% else %>

@@ -10,6 +10,11 @@
 </p>
 
 <p>
+  <b>Customer:</b>
+  <%= @item.customer.name %>
+</p>
+
+<p>
   <b>Decision:</b>
   <%= simple_format(@item.decision) %>
 </p>
@@ -31,5 +36,5 @@
   <%= @item.date_state %>
 </p>
 
-<%= link_to 'Edit', edit_meeting_item_path(@meeting, @item) %> |
+<%= link_to 'Edit', edit_meeting_meeting_item_path(@meeting, @item) %> |
 <%= link_to 'Back', meeting_path(@meeting) %>
