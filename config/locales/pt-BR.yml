@@ -19,6 +19,40 @@ pt-BR:
         fax: Fax
         enrollment: CNPJ/CPF
         email: E-Mail
+      project:
+        name: Nome
+        date_begin: Data Inicial
+        date_end: Data Final
+        specification: Especifcação
+      task:
+        title: Titulo
+        hours: Horas
+        description: Descrição
+      Item:
+        date_end: Data Final
+        date_start: Data Inicial
+        title: Título
+        description: Descrição
+        hour_estimated: Hora Estimada
+        hour_used: Hora Utilizada
+
+      type:
+        description: Descrição
+
+      state:
+        description: Descrição
+
+      meeting:
+        date_end: Data Final
+        date_init: Data Inicial
+        description: Descrição
+        title: Título
+      
+      user:
+        email: E-Mail
+        password: Senha
+        password_confirmation: Confirmar Senha
+        remember_me: Manter Conectado?
 
   date:
     abbr_day_names:
