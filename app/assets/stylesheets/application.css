@@ -13,19 +13,22 @@
  *= require_tree .
  */
 
-html,
-body {
+html, body, #wrap {
     height: 100%;
+}
+
+body > #wrap {
+  height: auto; 
+  min-height: 100%;
 }
 
 #wrap {
-    min-height: 95%;
-    height: auto !important;
-    height: 100%;
+    height: auto;
+    min-height: 100%;
 }
 
 #push{
-    height: 50px;
+    height: 30px;
 }
 
 .container .credits {
@@ -41,12 +44,20 @@ body {
     width: 200px;*/
 }
 
+#main {
+  overflow:auto;
+	padding-bottom: 40px;
+}  /* deve ter a mesma altura do rodapé */
+
 #footer .container{
-    /*background-color: #272B35;*/
-    background-color: #EFEFEF;
-    color: white;
-    min-height: 100%;
-    width: auto !important;
-    width: 100%;
-    margin-top: 0px;
+  position: relative;
+	/*background-color: #272B35;*/
+  background-color: #EFEFEF;
+  color: white;
+  /*min-height: 100%;*/
+  /*width: auto !important;*/
+  width: 100%;
+  margin-top: -30px;
+  bottom:0;
+  clear:both
 }
