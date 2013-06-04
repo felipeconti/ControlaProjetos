@@ -1,7 +1,7 @@
 <tr>
   <td><%= link_to task.title, customer_project_task_path(@customer, @project, task) %></td>
   <% if task.user.nil? %>
-      <td> - </td>
+    <td> - </td>
   <% else %>
     <td><%= task.user.email %></td>
   <% end %>

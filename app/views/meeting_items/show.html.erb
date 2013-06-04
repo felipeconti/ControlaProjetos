@@ -11,7 +11,9 @@
 
 <p>
   <b>Customer:</b>
-  <%= @item.customer.name %>
+  <% if not @item.customer.nil? %>
+    <%= @item.customer.name %>
+  <% end %>
 </p>
 
 <p>
