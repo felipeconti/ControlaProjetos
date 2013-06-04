@@ -34,6 +34,7 @@ gem "twitter-bootstrap-rails"
 
 gem 'simple_form'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'devise'
 gem 'responders'
 gem 'rails_admin'
