@@ -13,8 +13,8 @@
     <% end %>
 
     <%= f.input :name %>
-    <%= f.input :date_begin %>
-    <%= f.input :date_end %>
+    <%= f.input :date_begin, as: :string, input_html: { class: 'datepicker' } %>
+    <%= f.input :date_end, as: :string, input_html: { class: 'datepicker' } %>
     <%= f.input :specification %>
 
     <div class="form-actions">
