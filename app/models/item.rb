@@ -1,6 +1,6 @@
 class Item < ActiveRecord::Base
   attr_accessible :date_end, :date_start, :title, :description,
-                  :hour_estimated, :hour_used, :state_id, :user_id
+                  :hour_estimated, :hour_used, :state_id, :user_id, :priority
 
   belongs_to :task
   belongs_to :state
@@ -12,5 +12,6 @@ class Item < ActiveRecord::Base
 
   def init
     self.state_id  ||= 1
+    self.priority  ||= 0
   end
 end
