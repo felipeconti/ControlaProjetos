@@ -28,7 +28,7 @@ body > #wrap {
 }
 
 #push{
-    height: 30px;
+    height: 50px;
 }
 
 .container .credits {
@@ -46,8 +46,8 @@ body > #wrap {
 
 #main {
   overflow:auto;
-	padding-bottom: 40px;
-}  /* deve ter a mesma altura do rodapé */
+	padding-bottom: 30px; /* deve ter a mesma altura do rodapé */
+}
 
 #footer .container{
   position: relative;
