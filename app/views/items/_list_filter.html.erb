@@ -6,10 +6,15 @@
   
   <% case type %>
   <% when 1 %>
-      <h3 id="no_priority">Aguardando avaliação de prioridade</h3>
+    <h3 id="no_priority">Aguardando avaliação de prioridade</h3>
   <% when 2 %>
-  <% else %>
+    <h3 id="space"> . </h3>
+  <% when 3 %>
     <h3 id="completed">Concluídos</h3>
+  <% when 4 %>
+    <h3 id="canceled">Cancelados</h3>
+  <% else %>    
+    <h3 id="space"> . </h3>
   <% end %>
   
   <table class="table table-hover">
@@ -30,12 +35,5 @@
       <%= render @items_filtred.order(:priority) %>
     </tbody>
   </table>
-
-  <% case type %>
-  <% when 1 %>
-      <h3 id="space"> . </h3>
-  <% when 2 %>
-  <% else %>
-  <% end %>
 
 <% end %>
