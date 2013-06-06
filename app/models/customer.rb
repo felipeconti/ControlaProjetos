@@ -1,6 +1,6 @@
 class Customer < ActiveRecord::Base
   attr_accessible :address, :enrollment, :complement, :email, :fax, :name,
-                  :neighborhood, :nickname, :phone, :mobile, :zip_code
+                  :neighborhood, :nickname, :phone, :mobile, :zip_code, :website
 
   validates :name, presence: true
 
