@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20130606024124) do
     t.integer  "zip_code"
     t.integer  "phone",        :limit => 5
     t.integer  "mobile",       :limit => 5
-    t.integer  "fax"
+    t.integer  "fax",          :limit => 5
     t.integer  "enrollment",   :limit => 8
     t.string   "email"
     t.datetime "created_at",                :null => false
