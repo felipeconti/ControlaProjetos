@@ -2,11 +2,16 @@ class Item < ActiveRecord::Base
   attr_accessible :date_end, :date_start, :title, :description,
                   :hour_estimated, :hour_used, :state_id, :user_id, :priority
 
-  belongs_to :task
-  belongs_to :state
-  belongs_to :user
-
   validates :title, :date_start, :state_id, presence: true
+
+  belongs_to :task
+  validates_associated :task
+
+  belongs_to :state
+  validates_associated :state
+
+  belongs_to :user
+  validates_associated :user
 
   after_initialize :init
 

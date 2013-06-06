@@ -23,9 +23,9 @@ pt-BR:
         name: Nome
         date_begin: Data Inicial
         date_end: Data Final
-        specification: Especifcação
+        specification: Especificação
       task:
-        title: Titulo
+        title: Título
         hours: Horas
         description: Descrição
       Item:
