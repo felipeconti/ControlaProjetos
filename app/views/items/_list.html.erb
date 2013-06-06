@@ -1,7 +1,7 @@
 <%- model_class = Item -%>
 
 <% @where_no_priority = "priority = 0 and state_id not in (select id from states where UPPER(description) like 'CONCLU%DO' )" %>
-<% @where_pending = "priority > 0" %>
+<% @where_pending = "priority > 0 and state_id in (select id from states where UPPER(description) like 'PENDENTE' )" %>
 <% @where_completed = "state_id = 2 OR state_id in (select id from states where UPPER(description) like 'CONCLU%DO' )" %>
 
 <h2>Itens</h2>
@@ -10,4 +10,4 @@
 
 <%= render :partial => 'items/list_filter', :locals => { :type => 2, :where => @where_pending } %>
 
-<%= render :partial => 'items/list_filter', :locals => { :type => 3, :where => @where_completed } %>
+<%= render :partial => 'items/list_filter', :locals => { :type => 3, :where => @where_completed } %>Created
