@@ -1,7 +1,7 @@
 <%- model_class = Item -%>
 
-<% @items_no_priority = @task.items.where("priority = 0 and state_id not in (select id from states where UPPER(description) like 'CONCLU%' )") %>
-<% @items_completed = @task.items.where("state_id = 2 OR state_id in (select id from states where UPPER(description) like 'CONCLU%' )") %>
+<% @items_no_priority = @task.items.where("priority = 0 and state_id not in (select id from states where UPPER(description) like 'CONCLU%DO' )") %>
+<% @items_completed = @task.items.where("state_id = 2 OR state_id in (select id from states where UPPER(description) like 'CONCLU%DO' )") %>
 
 <h2>Itens</h2>
 
