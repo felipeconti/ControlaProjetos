@@ -1,70 +1,13 @@
 <%- model_class = Item -%>
 
-<% @items_no_priority = @task.items.where("priority = 0 and state_id not in (select id from states where UPPER(description) like 'CONCLU%DO' )") %>
-<% @items_completed = @task.items.where("state_id = 2 OR state_id in (select id from states where UPPER(description) like 'CONCLU%DO' )") %>
+<% @where_no_priority = "priority = 0 and state_id not in (select id from states where UPPER(description) like 'CONCLU%DO' )" %>
+<% @where_pending = "priority > 0" %>
+<% @where_completed = "state_id = 2 OR state_id in (select id from states where UPPER(description) like 'CONCLU%DO' )" %>
 
 <h2>Itens</h2>
 
-<% if @items_no_priority.count > 0 %>
-    <h3 id="no_priority">Aguardando avaliação de prioridade</h3>
-    <table class="table table-hover">
-      <thead>
-      <tr>
-        <th><%= model_class.human_attribute_name(:priority) %></th>
-        <th><%= model_class.human_attribute_name(:title) %></th>
-        <th><%= model_class.human_attribute_name(:date_start) %></th>
-        <th><%= model_class.human_attribute_name(:date_end) %></th>
-        <th><%= model_class.human_attribute_name(:hour_estimated) %></th>
-        <th><%= model_class.human_attribute_name(:hour_used) %></th>
-        <th><%= model_class.human_attribute_name(:user_id) %></th>
-        <th><%= model_class.human_attribute_name(:state_id) %></th>
-        <th><%=t 'actions', :default => t("helpers.actions") %></th>
-      </tr>
-      </thead>
-      <tbody>
-        <%= render @items_no_priority.order(:priority) %>
-      </tbody>
-    </table>
-    <h3 id="no_priority"> - - - </h3>
-<% end %>
+<%= render :partial => 'items/list_filter', :locals => { :type => 1, :where => @where_no_priority } %>
 
-<table class="table table-hover">
-  <thead>
-  <tr>
-    <th><%= model_class.human_attribute_name(:priority) %></th>
-    <th><%= model_class.human_attribute_name(:title) %></th>
-    <th><%= model_class.human_attribute_name(:date_start) %></th>
-    <th><%= model_class.human_attribute_name(:date_end) %></th>
-    <th><%= model_class.human_attribute_name(:hour_estimated) %></th>
-    <th><%= model_class.human_attribute_name(:hour_used) %></th>
-    <th><%= model_class.human_attribute_name(:user_id) %></th>
-    <th><%= model_class.human_attribute_name(:state_id) %></th>
-    <th><%=t 'actions', :default => t("helpers.actions") %></th>
-  </tr>
-  </thead>
-  <tbody>
-  <%= render @task.items.where("priority > 0").order(:priority) %>
-  </tbody>
-</table>
+<%= render :partial => 'items/list_filter', :locals => { :type => 2, :where => @where_pending } %>
 
-<% if @items_completed.count > 0 %>
-    <h3 id="completed">Concluídos</h3>
-    <table class="table table-hover">
-      <thead>
-      <tr>
-        <th><%= model_class.human_attribute_name(:priority) %></th>
-        <th><%= model_class.human_attribute_name(:title) %></th>
-        <th><%= model_class.human_attribute_name(:date_start) %></th>
-        <th><%= model_class.human_attribute_name(:date_end) %></th>
-        <th><%= model_class.human_attribute_name(:hour_estimated) %></th>
-        <th><%= model_class.human_attribute_name(:hour_used) %></th>
-        <th><%= model_class.human_attribute_name(:user_id) %></th>
-        <th><%= model_class.human_attribute_name(:state_id) %></th>
-        <th><%=t 'actions', :default => t("helpers.actions") %></th>
-      </tr>
-      </thead>
-      <tbody>
-        <%= render @items_completed.order(:priority) %>
-      </tbody>
-    </table>
-<% end %>
+<%= render :partial => 'items/list_filter', :locals => { :type => 3, :where => @where_completed } %>
