@@ -4,6 +4,7 @@ pt-BR:
   cancel: "Cancelar"
   destroy: "Apagar"
   sure: "Você tem certeza?"
+  qtd_items: "Qtd items"
 
   simple_form:
     labels:

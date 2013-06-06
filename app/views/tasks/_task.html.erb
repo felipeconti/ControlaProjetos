@@ -8,6 +8,7 @@
   <td><%= task.type.description %></td>
   <td><%= task.hours %></td>
   <td><%= task.state.description %></td>
+  <td><%= task.items.count %></td>
   <td>
     <%= link_to t('edit', :default => t("helpers.links.edit")),
                 edit_customer_project_task_path(@customer, @project, task), :class => 'btn btn-mini' %>
