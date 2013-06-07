@@ -14,8 +14,8 @@
 
     <%= f.input :priority %>
     <%= f.input :title %>
-    <%= f.input :date_start %>
-    <%= f.input :date_end %>
+    <%= f.input :date_start, as: :string, input_html: { class: 'datepicker' } %>
+    <%= f.input :date_end, as: :string, input_html: { class: 'datepicker' } %>
     <%= f.input :hour_estimated %>
     <%= f.input :hour_used %>
     <%= f.label :user_id %>

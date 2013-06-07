@@ -14,8 +14,17 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require twitter/bootstrap
+//= require bootstrap-datepicker
 //= require_tree .
 
+//http://eternicode.github.io/bootstrap-datepicker/
 $(function(){
-    $('.datepicker').datepicker();
+  $('.datepicker')
+    .datepicker({
+      language: 'pt-BR',
+      format: 'yyyy-mm-dd',
+      todayBtn: true,
+      autoclose: true,
+      todayHighlight: true,
+    })
 });
