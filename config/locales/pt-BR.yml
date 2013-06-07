@@ -266,6 +266,13 @@ pt-BR:
       <<: *errors
 
   activerecord:
+    models:
+      customer: Clientes
+      project: Projetos
+      task: Tarefas
+      item: Items
+      meeting: Reuniões
+      meeting_item: Itens da reunião      
     attributes:
       customer:
         name: "Nome"
