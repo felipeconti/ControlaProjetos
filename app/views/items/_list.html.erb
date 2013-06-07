@@ -1,9 +1,9 @@
 <%- model_class = Item -%>
 
-<% @where_no_priority = "priority = 0 and state_id in (select id from states where UPPER(description) like 'PENDENTE' )" %>
-<% @where_pending     = "priority > 0 and state_id in (select id from states where UPPER(description) like 'PENDENTE' )" %>
-<% @where_completed   = "state_id = 2  OR state_id in (select id from states where UPPER(description) like 'CONCLU%DO' )" %>
-<% @where_canceled    = "state_id = 3  OR state_id in (select id from states where UPPER(description) like 'CANCELADO' )" %>
+<% @where_no_priority = get_where(1) %>
+<% @where_pending     = get_where(2) %>
+<% @where_completed   = get_where(3) %>
+<% @where_canceled    = get_where(4) %>
 
 <h2>Itens</h2>
 

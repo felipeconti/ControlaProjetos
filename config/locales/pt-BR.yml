@@ -1,10 +1,14 @@
 pt-BR:
-  actions: "Ação"
-  edit: "Editar"
-  cancel: "Cancelar"
-  destroy: "Apagar"
-  sure: "Você tem certeza?"
-  qtd_items: "Qtd items"
+  actions: Ação
+  edit: Editar
+  cancel: Cancelar
+  destroy: Apagar
+  sure: Você tem certeza?
+  items: Itens
+  items_analyzing: Análize
+  items_pending: Pendentes
+  items_completed: Concluídos
+  items_canceled: Cancelados
 
   simple_form:
     labels:
