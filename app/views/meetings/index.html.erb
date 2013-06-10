@@ -25,8 +25,16 @@
   <% @meetings.each do |meeting| %>
       <tr>
         <td><%= link_to meeting.title, meeting_path(meeting) %></td>
-        <td><%= meeting.date_init %></td>
-        <td><%= meeting.date_end %></td>
+        <% if meeting.date_init.nil? %>
+            <td> - </td>
+        <% else %>
+            <td><%= meeting.date_init.to_date() %></td>
+        <% end %>
+        <% if meeting.date_end.nil? %>
+            <td> - </td>
+        <% else %>
+            <td><%= meeting.date_end.to_date() %></td>
+        <% end %>
         <td><%= meeting.meeting_items.count %></td>
         <td><%= meeting.meeting_items.where(get_where_with_state(1)).count %></td>
         <td><%= meeting.meeting_items.where(get_where_with_state(2)).count %></td>
