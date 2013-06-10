@@ -32,7 +32,7 @@
 <p>
   <b>User:</b>
   <% if not @item.user.nil? %>
-    <%= @item.user.email %>
+    <%= @item.user.name %>
   <% end %>
 </p>
 
@@ -46,5 +46,5 @@
   <%= simple_format(@item.description) %>
 </p>
 
-<%= link_to 'Edit', edit_customer_project_task_item_path(@customer, @project, @task, @item) %> |
-<%= link_to 'Back', customer_project_task_path(@customer, @project, @task) %>
+<%= link_to t(:edit), edit_customer_project_task_item_path(@customer, @project, @task, @item) %> |
+<%= link_to t(:back), customer_project_task_path(@customer, @project, @task) %>

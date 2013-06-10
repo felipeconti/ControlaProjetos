@@ -12,7 +12,8 @@
 State.delete_all
 Type.delete_all
 
-#User.create!(email: 'contato@ztc.com.br', password: '1234')
+#User.create!(name: admin, email: 'contato@ztc.com.br', password: '1234')
+
 State.create!(id: 1, description: "Pendente")
 State.create!(id: 2, description: "Concluído")
 State.create!(id: 3, description: "Cancelado")

@@ -3,7 +3,7 @@
   <% if task.user.nil? %>
     <td> - </td>
   <% else %>
-    <td><%= task.user.email %></td>
+    <td><%= task.user.name %></td>
   <% end %>
   <td><%= task.type.description %></td>
   <td><%= task.hours %></td>

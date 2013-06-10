@@ -24,7 +24,7 @@
 <p>
   <b>User:</b>
   <% if not @item.user.nil? %>
-      <%= @item.user.email %>
+      <%= @item.user.name %>
   <% end %>
 </p>
 
@@ -38,5 +38,5 @@
   <%= @item.date_state %>
 </p>
 
-<%= link_to 'Edit', edit_meeting_meeting_item_path(@meeting, @item) %> |
-<%= link_to 'Back', meeting_path(@meeting) %>
+<%= link_to t(:edit), edit_meeting_meeting_item_path(@meeting, @item) %> |
+<%= link_to t(:back), meeting_path(@meeting) %>

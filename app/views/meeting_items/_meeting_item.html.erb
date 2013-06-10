@@ -9,7 +9,7 @@
   <% if meeting_item.user.nil? %>
       <td> - </td>
   <% else %>
-      <td><%= meeting_item.user.email %></td>
+      <td><%= meeting_item.user.name %></td>
   <% end %>
   <td><%= meeting_item.state.description %></td>
   <td><%= meeting_item.date_state %></td>

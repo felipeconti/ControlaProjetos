@@ -1,9 +1,11 @@
 pt-BR:
   actions: Ação
   edit: Editar
+  update: Alterar
   cancel: Cancelar
   destroy: Apagar
   sure: Você tem certeza?
+  back: 'Voltar'
   items: Itens
   items_analyzing: Análise
   items_pending: Pendentes
@@ -59,9 +61,11 @@ pt-BR:
         date_state: Data State
       
       user:
+        name: Nome
         email: E-Mail
-        password: Senha
-        password_confirmation: Confirmar Senha
+        password: Nova Senha
+        password_confirmation: Confirmar Nova Senha
+        current_password: Digite sua Senha
         remember_me: Manter Conectado?
 
   date:
@@ -276,7 +280,8 @@ pt-BR:
       task: Tarefas
       item: Items
       meeting: Reuniões
-      meeting_item: Itens da reunião      
+      meeting_item: Itens da reunião
+      user: Usuario
     attributes:
       customer:
         name: "Nome"
@@ -304,6 +309,7 @@ pt-BR:
         hour_used: Hora utilizada
         user_id: Usuário
         state_id: Situação
+        description: Descrição
       meeting:
         title: Título
         date_init: Data inicial

@@ -20,7 +20,7 @@
     <%= f.input :hour_used %>
     <%= f.label :user_id %>
     <%= f.select :user_id,
-                 User.all.map { |u| [u.email, u.id] },
+                 User.all.map { |u| [u.name, u.id] },
                  :prompt => t(:select_user) %>
     <%= f.label :state_id %>
     <%= f.select :state_id,

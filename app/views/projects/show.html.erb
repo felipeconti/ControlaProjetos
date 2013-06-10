@@ -6,15 +6,15 @@
 
 <p id="notice"><%= notice %></p>
 
-<div class="project-detail">
-    <% if not @project.specification.nil? %>
-        <h3>Especificação</h3>
-          <textarea rows="5" readonly><%= @project.specification %></textarea>
-        <br/>
-    <% end %>
-</div>
-
 <div class="task-list">
   <%= link_to "Nova Tarefa", new_customer_project_task_path(@customer, @project), class: 'btn btn-primary' %>
   <%= render :partial => 'tasks/list' %>
+</div>
+
+<div class="project-detail">
+  <% if not @project.specification.nil? %>
+      <h3>Especificação</h3>
+      <textarea rows="5" readonly><%= @project.specification %></textarea>
+      <br/>
+  <% end %>
 </div>
