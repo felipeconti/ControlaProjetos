@@ -1,0 +1,33 @@
+<%- model_class = MeetingItem -%>
+
+<% @items_filtred = @meeting.meeting_items.where(where) %>
+
+<% if @items_filtred.count > 0 %>
+  
+  <% case type %>
+  <% when 2 %>
+    <h3 class="item_title completed">Concluídos</h3>
+  <% when 3 %>
+    <h3 class="item_title canceled">Cancelados</h3>
+  <% else %>
+    <h3 class="item_title pending">Pendentes</h3>
+  <% end %>
+  
+  <table class="table table-hover table-bordered table-striped">
+    <thead>
+      <tr>
+        <th><%= model_class.human_attribute_name(:subject) %></th>
+        <th><%= model_class.human_attribute_name(:customer_id) %></th>
+        <th><%= model_class.human_attribute_name(:decision) %></th>
+        <th><%= model_class.human_attribute_name(:user_id) %></th>
+        <th><%= model_class.human_attribute_name(:state_id) %></th>
+        <th><%= model_class.human_attribute_name(:date_state) %></th>
+        <th><%=t 'actions', :default => t("helpers.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @items_filtred.order(:created_at) %>
+    </tbody>
+  </table>
+
+<% end %>

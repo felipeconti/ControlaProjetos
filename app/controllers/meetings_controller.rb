@@ -29,12 +29,12 @@ class MeetingsController < InheritedResources::Base
   def update
     @meeting = Meeting.find(params[:id])
     @meeting.update_attributes(params[:meeting])
-    respond_with(@meeting)
+    respond_with(@meeting, location: meetings_path)
   end
 
   def destroy
     @meeting = Meeting.find(params[:id])
     @meeting.destroy
-    respond_with(@meeting)
+    respond_with(@meeting, location: meetings_path)
   end
 end

@@ -1,9 +1,9 @@
 <%- model_class = Item -%>
 
-<% @where_no_priority = get_where(0) %>
-<% @where_pending     = get_where(1) %>
-<% @where_completed   = get_where(2) %>
-<% @where_canceled    = get_where(3) %>
+<% @where_no_priority = get_where_with_state_and_priority(0) %>
+<% @where_pending     = get_where_with_state_and_priority(1) %>
+<% @where_completed   = get_where_with_state_and_priority(2) %>
+<% @where_canceled    = get_where_with_state_and_priority(3) %>
 
 <h2>Itens</h2>
 
