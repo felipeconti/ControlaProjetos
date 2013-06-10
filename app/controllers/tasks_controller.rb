@@ -23,6 +23,7 @@ class TasksController < ApplicationController
 
   def create
     @task = @project.tasks.new(params[:task])
+    @task.user = current_user
     @task.save
     respond_with(@task, location: customer_project_path(@customer, @project))
   end

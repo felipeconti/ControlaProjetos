@@ -1,5 +1,5 @@
 class Task < ActiveRecord::Base
-  attr_accessible :title, :hours, :state_id, :user_id, :type_id, :description
+  attr_accessible :title, :hours, :state_id, :type_id, :description
 
   validates :title, :state_id, :type_id, presence: true
 

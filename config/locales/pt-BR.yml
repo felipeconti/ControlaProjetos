@@ -314,7 +314,7 @@ pt-BR:
         decision: Decisão
         user_id: Usuário
         state_id: Situação
-        date_state: Data da situação
+        date_state: Data situação
 
     errors:
       <<: *errors
