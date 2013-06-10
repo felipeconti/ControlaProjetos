@@ -12,14 +12,15 @@
         </div>
     <% end %>
 
-    <%= f.input :name %>
+    <div class="form-actions">
+      <%= f.button :submit, :class => 'btn-primary' %>
+      <%= link_to t('cancel', :default => t("helpers.links.cancel")),
+                  customer_path(@customer), :class => 'btn' %>
+    </div>
+
+    <%= f.input :name, :autofocus => true %>
     <%= f.input :date_begin, as: :string, input_html: { class: 'datepicker' } %>
     <%= f.input :date_end, as: :string, input_html: { class: 'datepicker' } %>
     <%= f.input :specification %>
 
-    <div class="form-actions">
-        <%= f.button :submit, :class => 'btn-primary' %>
-        <%= link_to t('cancel', :default => t("helpers.links.cancel")),
-                    customer_path(@customer), :class => 'btn' %>
-    </div>
 <% end %>

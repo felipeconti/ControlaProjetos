@@ -12,7 +12,13 @@
     </div>
     <% end %>
 
-    <%= f.input :title %>
+    <div class="form-actions">
+      <%= f.button :submit, :class => 'btn-primary' %>
+      <%= link_to t('cancel', :default => t("helpers.links.cancel")),
+                  customer_project_path(@customer, @project), :class => 'btn' %>
+    </div>
+
+    <%= f.input :title, :autofocus => true %>
     <%= f.label :type_id %>
     <%= f.select :type_id,
                  Type.all.map { |u| [u.description, u.id] },
@@ -23,11 +29,5 @@
                  State.all.map { |u| [u.description, u.id] },
                  :prompt => t(:select_state) %>
     <%= f.input :description %>
-
-    <div class="form-actions">
-      <%= f.button :submit, :class => 'btn-primary' %>
-      <%= link_to t('cancel', :default => t("helpers.links.cancel")),
-                  customer_project_path(@customer, @project), :class => 'btn' %>
-    </div>
 
 <% end %>

@@ -1,6 +1,6 @@
 ControlaProjetos::Application.configure do
   
-  config.action_mailer.default_url_options = { :host => 'controlaprojetos.ztc.com.br' }
+  config.action_mailer.default_url_options = { :host => 'ztcsolutions.com.br' }
 
   # Settings specified here will take precedence over those in config/application.rb
 

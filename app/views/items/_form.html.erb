@@ -12,8 +12,14 @@
         </div>
     <% end %>
 
+    <div class="form-actions">
+      <%= f.button :submit, :class => 'btn-primary' %>
+      <%= link_to t('cancel', :default => t("helpers.links.cancel")),
+                  customer_project_task_path(@customer, @project, @task), :class => 'btn' %>
+    </div>
+
     <%= f.input :priority %>
-    <%= f.input :title %>
+    <%= f.input :title, :autofocus => true %>
     <%= f.input :date_start, as: :string, input_html: { class: 'datepicker' } %>
     <%= f.input :date_end, as: :string, input_html: { class: 'datepicker' } %>
     <%= f.input :hour_estimated %>
@@ -27,11 +33,5 @@
                  State.all.map { |u| [u.description, u.id] },
                  :prompt => t(:select_state) %>
     <%= f.input :description %>
-
-    <div class="form-actions">
-      <%= f.button :submit, :class => 'btn-primary' %>
-      <%= link_to t('cancel', :default => t("helpers.links.cancel")),
-                  customer_project_task_path(@customer, @project, @task), :class => 'btn' %>
-    </div>
 
 <% end %>

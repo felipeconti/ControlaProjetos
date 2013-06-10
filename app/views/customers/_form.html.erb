@@ -12,7 +12,13 @@
         </div>
     <% end %>
 
-    <%= f.input :name %>
+    <div class="form-actions">
+      <%= f.button :submit, :class => 'btn-primary' %>
+      <%= link_to t('cancel', :default => t("helpers.links.cancel")),
+                  customers_path, :class => 'btn' %>
+    </div>
+
+    <%= f.input :name, :autofocus => true %>
     <%= f.input :nickname %>
     <%= f.input :enrollment %>
     <%= f.input :email %>
@@ -25,9 +31,4 @@
     <%= f.input :neighborhood %>
     <%= f.input :zip_code %>
 
-    <div class="form-actions">
-      <%= f.button :submit, :class => 'btn-primary' %>
-      <%= link_to t('cancel', :default => t("helpers.links.cancel")),
-                    customers_path, :class => 'btn' %>
-    </div>
 <% end %>

@@ -62,10 +62,10 @@ pt-BR:
       
       user:
         name: Nome
-        email: E-Mail
-        password: Nova Senha
-        password_confirmation: Confirmar Nova Senha
-        current_password: Digite sua Senha
+        email: E-mail
+        password: Senha
+        password_confirmation: Confirmar Senha
+        current_password: Senha Atual
         remember_me: Manter Conectado?
 
   date:

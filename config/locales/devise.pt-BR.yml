@@ -5,6 +5,12 @@ pt-BR:
   we_need_your_current_password_to_confirm_your_changes: ' - Digite sua senha para confirmar suas alterações'
   cancel_my_account: 'Cancelar minha conta'
   unhappy: 'Não Satisfeito?'
+  sign_in: 'Entrar'
+  new_password: 'Nova Senha'
+  new_password_confirmation: 'Confirmar Nova Senha'
+  current_password: 'Senha'
+  forgot_your_password: 'Esqueceu sua senha?'
+  send_me_reset_password_instructions: 'Solicitação para zerar senha'
 
   devise:
     confirmations:
