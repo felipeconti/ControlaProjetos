@@ -15,15 +15,13 @@ module ApplicationHelper
   def get_where(type)
       case type
         when 1
-          "priority = 0 and state_id in (select id from states where UPPER(description) like 'PENDENTE' )"
-        when 2
           "priority > 0 and state_id in (select id from states where UPPER(description) like 'PENDENTE' )"
-        when 3
+        when 2
           "state_id = 2  OR state_id in (select id from states where UPPER(description) like 'CONCLU%DO' )"
-        when 4
+        when 3
           "state_id = 3  OR state_id in (select id from states where UPPER(description) like 'CANCELADO' )"
         else
-          ""
+          "priority = 0 and state_id in (select id from states where UPPER(description) like 'PENDENTE' )"
         end
     end
 

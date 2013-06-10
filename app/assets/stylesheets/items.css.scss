@@ -2,17 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#no_priority, #canceled {
-  color: red;
-  text-align: center;
-}
-
-#completed {
-  color: blue;
-  text-align: center;
-}
-
-#space {
-  color: white;
+.item_title {
   text-align: center;
 }

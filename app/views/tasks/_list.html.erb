@@ -2,7 +2,7 @@
 
 <h2>Tarefas</h2>
 
-<table class="table table-hover">
+<table class="table table-hover table-bordered table-striped">
   <thead>
   <tr>
     <th><%= model_class.human_attribute_name(:title) %></th>
@@ -11,10 +11,10 @@
     <th><%= model_class.human_attribute_name(:hours) %></th>
     <th><%= model_class.human_attribute_name(:state_id) %></th>
     <th><%= t 'items' %></th>
-    <th><%= t 'items_analyzing' %></th>
+    <th class="no_priority"><%= t 'items_analyzing' %></th>
     <th><%= t 'items_pending' %></th>
-    <th><%= t 'items_completed' %></th>
-    <th><%= t 'items_canceled' %></th>
+    <th class="completed"><%= t 'items_completed' %></th>
+    <th class="canceled"><%= t 'items_canceled' %></th>
     <th><%= t 'actions', :default => t("helpers.actions") %></th>
   </tr>
   </thead>

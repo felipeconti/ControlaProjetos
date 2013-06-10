@@ -9,10 +9,10 @@
   <td><%= task.hours %></td>
   <td><%= task.state.description %></td>
   <td><%= task.items.count %></td>
+  <td><%= task.items.where(get_where(0)).count %></td>
   <td><%= task.items.where(get_where(1)).count %></td>
   <td><%= task.items.where(get_where(2)).count %></td>
   <td><%= task.items.where(get_where(3)).count %></td>
-  <td><%= task.items.where(get_where(4)).count %></td>
   <td>
     <%= link_to t('edit', :default => t("helpers.links.edit")),
                 edit_customer_project_task_path(@customer, @project, task), :class => 'btn btn-mini' %>

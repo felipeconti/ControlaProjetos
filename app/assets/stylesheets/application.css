@@ -62,3 +62,7 @@ body > #wrap {
   bottom:0;
   clear:both
 }
+
+table th{
+    background-color: #B8D0FA;
+}
