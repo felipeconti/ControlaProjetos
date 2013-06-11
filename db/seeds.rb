@@ -8,11 +8,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-#User.delete_all
+User.delete_all
 State.delete_all
 Type.delete_all
 
-#User.create!(name: admin, email: 'contato@ztc.com.br', password: '1234')
+User.create!(name: 'admin', email: 'contato@ztc.com.br', password: '1234')
 
 State.create!(id: 1, description: "Pendente")
 State.create!(id: 2, description: "Concluído")
