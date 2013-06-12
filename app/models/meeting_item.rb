@@ -19,5 +19,6 @@ class MeetingItem < ActiveRecord::Base
 
   def init
     self.state_id  ||= 1
+    self.date_state ||= Time.zone.now.to_date
   end
 end

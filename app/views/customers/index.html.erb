@@ -13,12 +13,12 @@
   <tr>
     <th><%= model_class.human_attribute_name(:logo) %></th>
     <th><%= model_class.human_attribute_name(:name) %></th>
-    <th><%= model_class.human_attribute_name(:nickname) %></th>
     <th><%= model_class.human_attribute_name(:enrollment) %></th>
     <th><%= model_class.human_attribute_name(:email) %></th>
     <th><%= model_class.human_attribute_name(:website) %></th>
     <th><%= model_class.human_attribute_name(:phone) %></th>
     <th><%= model_class.human_attribute_name(:mobile) %></th>
+    <th>Projetos</th>
     <th><%=t 'actions', :default => t("helpers.actions") %></th>
   </tr>
   </thead>
@@ -26,13 +26,13 @@
   <% @customers.each do |customer| %>
       <tr>
         <td><%= image_tag customer.logo.url(:thumb) %></td>
-        <td><%= link_to customer.name, customer_path(customer) %></td>
-        <td><%= customer.nickname %></td>
+        <td><%= link_to getNameOrNick(customer.name, customer.nickname), customer_path(customer) %></td>
         <td><%= customer.enrollment %></td>
         <td><%= customer.email %></td>
         <td><%= customer.website %></td>
         <td><%= customer.phone %></td>
         <td><%= customer.mobile %></td>
+        <td><%= customer.projects.count %></td>
         <td>
           <%= link_to t('edit', :default => t("helpers.links.edit")),
                       edit_customer_path(customer), :class => 'btn btn-mini' %>

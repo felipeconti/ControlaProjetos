@@ -11,6 +11,8 @@ pt-BR:
   items_pending: Pendentes
   items_completed: Concluídos
   items_canceled: Cancelados
+  owner: Criador
+  developer: Desenvolvedor
 
   simple_form:
     labels:

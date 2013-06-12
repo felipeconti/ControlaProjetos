@@ -23,6 +23,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = @task.items.new(params[:item])
+    @item.owner_id = current_user.id
     @item.save
     respond_with(@item, location: customer_project_task_path(@customer, @project, @task))
   end

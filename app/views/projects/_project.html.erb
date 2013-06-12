@@ -2,6 +2,7 @@
   <td><%= link_to project.name, customer_project_path(@customer, project) %></td>
   <td><%= project.date_begin %></td>
   <td><%= project.date_end %></td>
+  <td><%= project.tasks.count %></td>
   <td>
     <%= link_to t('edit', :default => t("helpers.links.edit")),
                 edit_customer_project_path(@customer, project), :class => 'btn btn-mini' %>

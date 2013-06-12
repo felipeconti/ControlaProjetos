@@ -13,6 +13,8 @@ class Item < ActiveRecord::Base
   belongs_to :user
   validates_associated :user
 
+  has_one :owner, :primary_key => "owner_id", :class_name => "User", :foreign_key => "id"
+
   after_initialize :init
 
   def init

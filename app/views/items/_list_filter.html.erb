@@ -20,11 +20,12 @@
       <tr>
         <th><%= model_class.human_attribute_name(:priority) %></th>
         <th><%= model_class.human_attribute_name(:title) %></th>
+        <th><%= t(:owner) %></th>
         <th><%= model_class.human_attribute_name(:date_start) %></th>
         <th><%= model_class.human_attribute_name(:date_end) %></th>
         <th><%= model_class.human_attribute_name(:hour_estimated) %></th>
         <th><%= model_class.human_attribute_name(:hour_used) %></th>
-        <th><%= model_class.human_attribute_name(:user_id) %></th>
+        <th><%= t(:developer) %></th>
         <th><%= model_class.human_attribute_name(:state_id) %></th>
         <th><%=t 'actions', :default => t("helpers.actions") %></th>
       </tr>
