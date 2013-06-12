@@ -13,6 +13,8 @@ class Customer < ActiveRecord::Base
     super include: :projects
   end
 
-  has_attached_file :logo, :styles => { :medium => "300x300>", :thumb => "50x50>" }, :default_url => "/images/:style/missing.png"
+  has_attached_file :logo, :styles => { :medium => "300x300>", 
+                                        :small => "50x50>", 
+                                        :thumb => "30x30>" }, :default_url => "/images/:style/missing.png"
   
 end
