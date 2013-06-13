@@ -1,0 +1,54 @@
+<%- model_class = Item -%>
+
+<div class="page-header">
+  <h3>Meus Itens de Tarefa</h3>
+</div>
+
+<table class="table table-hover table-bordered table-striped">
+  <thead>
+  <tr>
+    <th><%= model_class.human_attribute_name(:priority) %></th>
+    <th><%= model_class.human_attribute_name(:title) %></th>
+    <th><%= t(:owner) %></th>
+    <th><%= model_class.human_attribute_name(:date_start) %></th>
+    <th><%= model_class.human_attribute_name(:date_end) %></th>
+    <th><%= model_class.human_attribute_name(:hour_estimated) %></th>
+    <th><%= model_class.human_attribute_name(:hour_used) %></th>
+    <th><%= t(:developer) %></th>
+    <th><%= model_class.human_attribute_name(:state_id) %></th>
+    <th><%=t 'actions', :default => t("helpers.actions") %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @items.each do |item| %>
+      <tr>
+        <td><%= item.priority %></td>
+        <td><%= link_to item.title, customer_project_task_item_path(item.task.project.customer, item.task.project, item.task, item) %></td>
+        <% if item.owner.nil? %>
+            <td></td>
+        <% else %>
+            <td><%= item.owner.name %></td>
+        <% end %>
+        <td><%= item.date_start %></td>
+        <td><%= item.date_end %></td>
+        <td><%= item.hour_estimated %></td>
+        <td><%= item.hour_used %></td>
+        <% if item.user.nil? %>
+            <td></td>
+        <% else %>
+            <td><%= item.user.name %></td>
+        <% end %>
+        <td><%= item.state.description %></td>
+        <td>
+          <%= link_to t('edit', :default => t("helpers.links.edit")),
+                      edit_customer_project_task_item_path(item.task.project.customer, item.task.project, item.task, item), :class => 'btn btn-mini' %>
+          <%= link_to t('destroy', :default => t("helpers.links.destroy")),
+                      customer_project_task_item_path(item.task.project.customer, item.task.project, item.task, item),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => t('sure'))) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

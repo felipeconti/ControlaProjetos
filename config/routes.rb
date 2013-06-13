@@ -4,6 +4,7 @@ ControlaProjetos::Application.routes.draw do
 
   resources :types
   resources :states
+  resources :items
 
   resources :meetings do
     resources :meeting_items
@@ -22,6 +23,8 @@ ControlaProjetos::Application.routes.draw do
   end
 
   resources :users, :controller => 'users_json'
+
+  resources :user_items, :controller => 'items', :action => 'index'
 
   root :to => "customers#index"
 

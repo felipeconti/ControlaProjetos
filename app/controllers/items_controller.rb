@@ -1,9 +1,12 @@
 class ItemsController < ApplicationController
   respond_to :html, :json, :xml
+
   before_filter :find_task
+  skip_filter :find_task, :only => :index
 
   def index
-    @items = @task.items.all
+    @items = Item.where("state_id = :state_id AND user_id = :user_id",
+                        {:state_id => 1, :user_id => current_user.id}).all
     respond_with(@items)
   end
 
