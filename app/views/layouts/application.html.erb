@@ -23,9 +23,11 @@
           <a class="brand" href="/">Controla Projetos</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav nav-left">
+              <li><%= link_to "Meus Itens de Tarefa", user_items_path %></li>
+              <li><%= link_to "Meus Itens de Reunião", user_meeting_items_path %></li>
+              <li> | </li>
               <li><%= link_to "Clientes", customers_path %></li>
               <li><%= link_to "Reuniões", meetings_path %></li>
-              <li><%= link_to "Meus Itens de Tarefa", user_items_path %></li>
             </ul>
             <ul class="nav pull-right">
               <% if user_signed_in? %>

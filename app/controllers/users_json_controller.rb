@@ -1,5 +1,6 @@
 class UsersJsonController < ApplicationController
   respond_to :json
+
   skip_before_filter :authenticate_user!, :only => "index"
 
   def index

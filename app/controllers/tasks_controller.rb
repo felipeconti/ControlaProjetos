@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   respond_to :html, :json, :xml
+
   before_filter :find_project
 
   def index

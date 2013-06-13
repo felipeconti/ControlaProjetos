@@ -1,9 +1,11 @@
 class MeetingItemsController < ApplicationController
   respond_to :html, :json, :xml
+
   before_filter :find_meeting
+  skip_filter :find_meeting, :only => :index
 
   def index
-    @items = @meeting.meeting_items.all
+    @items = MeetingItem.where :state_id => 1, :user_id => current_user.id
     respond_with(@items)
   end
 

@@ -5,8 +5,7 @@ class ItemsController < ApplicationController
   skip_filter :find_task, :only => :index
 
   def index
-    @items = Item.where("state_id = :state_id AND user_id = :user_id",
-                        {:state_id => 1, :user_id => current_user.id}).all
+    @items = Item.where :state_id => 1, :user_id => current_user.id
     respond_with(@items)
   end
 

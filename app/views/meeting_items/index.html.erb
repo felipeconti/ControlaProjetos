@@ -1,0 +1,48 @@
+<%- model_class = MeetingItem -%>
+
+<div class="page-header">
+  <h3>Meus Itens de Reunião</h3>
+</div>
+
+<table class="table table-hover table-bordered table-striped">
+  <thead>
+  <tr>
+    <th><%= model_class.human_attribute_name(:subject) %></th>
+    <th><%= model_class.human_attribute_name(:customer_id) %></th>
+    <th><%= model_class.human_attribute_name(:decision) %></th>
+    <th><%= model_class.human_attribute_name(:user_id) %></th>
+    <th><%= model_class.human_attribute_name(:state_id) %></th>
+    <th><%= model_class.human_attribute_name(:date_state) %></th>
+    <th><%=t 'actions', :default => t("helpers.actions") %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @items.each do |item| %>
+      <tr>
+        <td><%= link_to item.subject, meeting_meeting_item_path(item.meeting, item) %></td>
+        <% if item.customer.nil? %>
+            <td></td>
+        <% else %>
+            <td><%= item.customer.name %></td>
+        <% end %>
+        <td><%= cutString item.decision, 20 %></td>
+        <% if item.user.nil? %>
+            <td></td>
+        <% else %>
+            <td><%= item.user.name %></td>
+        <% end %>
+        <td><%= item.state.description %></td>
+        <td><%= item.date_state %></td>
+        <td>
+          <%= link_to t('edit', :default => t("helpers.links.edit")),
+                      edit_meeting_meeting_item_path(item.meeting, item), :class => 'btn btn-mini' %>
+          <%= link_to t('destroy', :default => t("helpers.links.destroy")),
+                      meeting_meeting_item_path(item.meeting, item),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => t('sure'))) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -25,6 +25,6 @@ $(function(){
       format: 'yyyy-mm-dd',
       todayBtn: true,
       autoclose: true,
-      todayHighlight: true,
+      todayHighlight: true
     })
 });

@@ -5,6 +5,7 @@ ControlaProjetos::Application.routes.draw do
   resources :types
   resources :states
   resources :items
+  resources :meeting_items
 
   resources :meetings do
     resources :meeting_items
@@ -25,8 +26,9 @@ ControlaProjetos::Application.routes.draw do
   resources :users, :controller => 'users_json'
 
   resources :user_items, :controller => 'items', :action => 'index'
+  resources :user_meeting_items, :controller => 'meeting_items', :action => 'index'
 
-  root :to => "customers#index"
+  root :to => "items#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
