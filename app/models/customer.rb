@@ -16,5 +16,7 @@ class Customer < ActiveRecord::Base
   has_attached_file :logo, :styles => { :medium => "300x300>", 
                                         :small => "50x50>", 
                                         :thumb => "30x30>" }, :default_url => "/images/:style/missing.png"
+
+  default_scope order('name ASC')
   
 end

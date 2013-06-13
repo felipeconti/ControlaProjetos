@@ -9,4 +9,6 @@ class Meeting < ActiveRecord::Base
   def serializable_hash(options = {})
     super include: :meeting_items
   end
+
+  default_scope order('date_init DESC')
 end

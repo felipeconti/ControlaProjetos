@@ -12,4 +12,6 @@ class Project < ActiveRecord::Base
   def serializable_hash(options = {})
     super include: :tasks
   end
+
+  default_scope order('date_begin DESC')
 end
