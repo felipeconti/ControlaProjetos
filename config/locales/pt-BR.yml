@@ -5,7 +5,7 @@ pt-BR:
   cancel: Cancelar
   destroy: Apagar
   sure: Você tem certeza?
-  back: 'Voltar'
+  back: Voltar
   items: Itens
   items_analyzing: Análise
   items_pending: Pendentes
@@ -14,7 +14,6 @@ pt-BR:
   owner: Criador
   developer: Recurso
   id: ID
-
   date_start: Início
   date_end: Fim
   title: Título
@@ -23,6 +22,7 @@ pt-BR:
   hour_used: Hora Utilizada
   user_id: Recurso
   state_id: Situação
+  type_id: Tipo
 
   simple_form:
     labels:
