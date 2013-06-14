@@ -7,6 +7,7 @@
 <table class="table table-hover table-bordered table-striped">
   <thead>
   <tr>
+    <th><%= t(:id) %></th>
     <th><%= model_class.human_attribute_name(:subject) %></th>
     <th><%= model_class.human_attribute_name(:customer_id) %></th>
     <th><%= model_class.human_attribute_name(:decision) %></th>
@@ -19,6 +20,7 @@
   <tbody>
   <% @items.each do |item| %>
       <tr>
+        <td><%= item.id %></td>
         <td><%= link_to item.subject, meeting_meeting_item_path(item.meeting, item) %></td>
         <% if item.customer.nil? %>
             <td></td>

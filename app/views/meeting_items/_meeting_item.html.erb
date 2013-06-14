@@ -1,4 +1,5 @@
 <tr>
+  <td><%= meeting_item.id %></td>
   <td><%= link_to meeting_item.subject, meeting_meeting_item_path(@meeting, meeting_item) %></td>
   <% if meeting_item.customer.nil? %>
       <td></td>

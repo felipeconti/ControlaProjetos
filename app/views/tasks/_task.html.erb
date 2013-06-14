@@ -1,4 +1,5 @@
 <tr>
+  <td><%= task.id %></td>
   <td><%= link_to task.title, customer_project_task_path(@customer, @project, task) %></td>
   <td><%= task.type.description %></td>
   <td><%= task.hours %></td>

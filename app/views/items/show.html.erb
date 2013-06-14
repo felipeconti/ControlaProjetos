@@ -8,44 +8,44 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
+  <b><%= t(:title) %></b>
   <%= @item.title %>
 </p>
 
 <p>
-  <b>Hour estimated:</b>
+  <b><%= t(:hour_estimated) %></b>
   <%= @item.hour_estimated %>
 </p>
 
 <p>
-  <b>Hour used:</b>
+  <b><%= t(:hour_used) %></b>
   <%= @item.hour_used %>
 </p>
 
 <p>
-  <b>Date start:</b>
+  <b><%= t(:date_start) %></b>
   <%= @item.date_start %>
 </p>
 
 <p>
-  <b>Date end:</b>
+  <b><%= t(:date_end) %></b>
   <%= @item.date_end %>
 </p>
 
 <p>
-  <b>User:</b>
+  <b><%= t(:user_id) %></b>
   <% if not @item.user.nil? %>
     <%= @item.user.name %>
   <% end %>
 </p>
 
 <p>
-  <b>State:</b>
+  <b><%= t(:state_id) %></b>
   <%= @item.state.description %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b><%= t(:description) %></b>
   <%= simple_format(@item.description) %>
 </p>
 

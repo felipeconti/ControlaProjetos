@@ -1,6 +1,7 @@
 <tr>
-  <td><%= item.priority %></td>
+  <td><%= item.id %></td>
   <td><%= link_to item.title, customer_project_task_item_path(@customer, @project, @task, item) %></td>
+  <td><%= item.priority %></td>
   <% if item.owner.nil? %>
       <td></td>
   <% else %>

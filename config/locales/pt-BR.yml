@@ -12,7 +12,17 @@ pt-BR:
   items_completed: Concluídos
   items_canceled: Cancelados
   owner: Criador
-  developer: Desenvolvedor
+  developer: Recurso
+  id: ID
+
+  date_start: Início
+  date_end: Fim
+  title: Título
+  description: Descrição
+  hour_estimated: Hora Estimada
+  hour_used: Hora Utilizada
+  user_id: Recurso
+  state_id: Situação
 
   simple_form:
     labels:
@@ -30,16 +40,16 @@ pt-BR:
         email: E-Mail
       project:
         name: Nome
-        date_begin: Data Inicial
-        date_end: Data Final
+        date_begin: Início
+        date_end: Fim
         specification: Especificação
       task:
         title: Título
         hours: Horas
         description: Descrição
-      Item:
-        date_end: Data Final
-        date_start: Data Inicial
+      item:
+        date_start: Início
+        date_end: Fim
         title: Título
         description: Descrição
         hour_estimated: Hora Estimada
@@ -52,15 +62,15 @@ pt-BR:
         description: Descrição
 
       meeting:
-        date_end: Data Final
-        date_init: Data Inicial
+        date_init: Início
+        date_end: Fim
         description: Descrição
         title: Título
 
       meeting_item:
         subject: Assunto
         decision: Decisão
-        date_state: Data State
+        date_state: Data Situação
       
       user:
         name: Nome
@@ -294,35 +304,35 @@ pt-BR:
         mobile: "Celular"
       project:
         name: "Nome"
-        date_begin: "Data inicial"
-        date_end: "Data final"
+        date_begin: "Início"
+        date_end: "Fim"
       task:
         title: Título
-        user_id: Usuário
+        user_id: Recurso
         type_id: Tipo
         hours: Horas
         state_id: Situação
       item:
         priority: Prioridade
         title: Título
-        date_start: Data inicial
-        date_end: Data final
-        hour_estimated: Hora estimada
-        hour_used: Hora utilizada
-        user_id: Usuário
+        date_start: Início
+        date_end: Fim
+        hour_estimated: Hora Estimada
+        hour_used: Hora Utilizada
+        user_id: Recurso
         state_id: Situação
         description: Descrição
       meeting:
         title: Título
-        date_init: Data inicial
-        date_end: Data final
+        date_init: Início
+        date_end: Fim
       meeting_item:
         subject: Assunto
         customer_id: Cliente
         decision: Decisão
-        user_id: Usuário
+        user_id: Recurso
         state_id: Situação
-        date_state: Data situação
+        date_state: Data Situação
 
     errors:
       <<: *errors

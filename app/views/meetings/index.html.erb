@@ -11,6 +11,7 @@
 <table class="table table-hover table-bordered table-striped">
   <thead>
   <tr>
+    <th><%= t(:id) %></th>
     <th><%= model_class.human_attribute_name(:title) %></th>
     <th><%= model_class.human_attribute_name(:date_init) %></th>
     <th><%= model_class.human_attribute_name(:date_end) %></th>
@@ -24,6 +25,7 @@
   <tbody>
   <% @meetings.each do |meeting| %>
       <tr>
+        <td><%= meeting.id %></td>
         <td><%= link_to meeting.title, meeting_path(meeting) %></td>
         <% if meeting.date_init.nil? %>
             <td> - </td>
