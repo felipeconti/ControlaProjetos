@@ -2,7 +2,7 @@
 
     <% if @meeting.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@meeting.errors.count, "error") %> prohibited this meeting from being saved:</h2>
+          <h3><%= t(:error) %></h3>
 
           <ul>
             <% @meeting.errors.full_messages.each do |msg| %>

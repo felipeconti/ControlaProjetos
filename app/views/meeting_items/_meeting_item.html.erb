@@ -6,14 +6,14 @@
   <% else %>
       <td><%= meeting_item.customer.name %></td>
   <% end %>
-  <td><%= cutString meeting_item.decision, 20 %></td>
   <% if meeting_item.user.nil? %>
       <td></td>
   <% else %>
       <td><%= meeting_item.user.name %></td>
   <% end %>
-  <td><%= meeting_item.state.description %></td>
   <td><%= meeting_item.date_state %></td>
+  <td><%= meeting_item.state.description %></td>
+  <td><%= cutString meeting_item.decision, 20 %></td>
   <td>
     <%= link_to t('edit', :default => t("helpers.links.edit")),
                 edit_meeting_meeting_item_path(@meeting, meeting_item), :class => 'btn btn-mini' %>

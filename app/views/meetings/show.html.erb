@@ -1,11 +1,11 @@
 <%- model_class = Meeting -%>
 
 <div class="page-header">
-  <h3><%= link_to "Todas Reuniões ", meetings_path, class: 'small' %> \ <%= @meeting.title %> </h3>
+  <h3><%= link_to t(:meetings), meetings_path, class: 'small' %> \ <%= @meeting.title %> </h3>
 </div>
 
 <p id="notice"><%= notice %></p>
 
-<%= link_to "Novo Item", new_meeting_meeting_item_path(@meeting), class: 'btn btn-primary' %>
+<%= link_to t('helpers.titles.new', :model => t(:meeting_item)), new_meeting_meeting_item_path(@meeting), class: 'btn btn-primary' %>
 
 <%= render :partial => 'meeting_items/list' %>

@@ -14,8 +14,8 @@ pt-BR:
   owner: Criador
   developer: Recurso
   id: ID
-  date_start: Início
-  date_end: Fim
+  date_start: Data Início
+  date_end: Data Fim
   title: Título
   description: Descrição
   hour_estimated: Hora Estimada
@@ -23,6 +23,26 @@ pt-BR:
   user_id: Recurso
   state_id: Situação
   type_id: Tipo
+  subject: Assunto
+  decision: Decisão
+  date_state: Data Situação
+  customer_id: Cliente
+  error: Erro! Favor revisar o cadastro.
+
+  customer: Cliente
+  customers: Clientes
+  project: Projeto
+  projects: Projetos
+  task: Tarefa
+  tasks: Tarefas
+  item: Item
+  items: Itens
+  meeting: Reunião
+  meetings: Reuniões
+  meeting_item: Item Reunião
+  meeting_items: Itens Reunião
+  user: Usuário
+  users: Usuários
 
   simple_form:
     labels:
@@ -33,23 +53,23 @@ pt-BR:
         complement: Complemento
         neighborhood: Bairro
         zip_code: CEP
-        phone: Tel.
-        mobile: Cel.
+        phone: Telefone
+        mobile: Celular
         fax: Fax
         enrollment: CNPJ/CPF
         email: E-Mail
       project:
         name: Nome
-        date_begin: Início
-        date_end: Fim
+        date_begin: Data Início
+        date_end: Data Fim
         specification: Especificação
       task:
         title: Título
         hours: Horas
         description: Descrição
       item:
-        date_start: Início
-        date_end: Fim
+        date_start: Data Início
+        date_end: Data Fim
         title: Título
         description: Descrição
         hour_estimated: Hora Estimada
@@ -62,8 +82,8 @@ pt-BR:
         description: Descrição
 
       meeting:
-        date_init: Início
-        date_end: Fim
+        date_init: Data Início
+        date_end: Data Fim
         description: Descrição
         title: Título
 
@@ -212,6 +232,9 @@ pt-BR:
       create: Criar %{model}
       submit: Salvar %{model}
       update: Atualizar %{model}
+    titles:
+      new: Incluir %{model}
+      edit: Editar %{model}
   number:
     currency:
       format:
@@ -287,25 +310,25 @@ pt-BR:
 
   activerecord:
     models:
-      customer: Clientes
-      project: Projetos
-      task: Tarefas
-      item: Items
-      meeting: Reuniões
-      meeting_item: Itens da reunião
-      user: Usuario
+      customer: Cliente
+      project: Projeto
+      task: Tarefa
+      item: Item
+      meeting: Reunião
+      meeting_item: Item Reunião
+      user: Usuário
     attributes:
       customer:
-        name: "Nome"
-        nickname: "Apelido"
-        enrollment: "CNPJ / CPF"
-        email: "E-Mail"
-        phone: "Telefone"
-        mobile: "Celular"
+        name: Nome
+        nickname: Apelido
+        enrollment: CNPJ / CPF
+        email: E-Mail
+        phone: Telefone
+        mobile: Celular
       project:
-        name: "Nome"
-        date_begin: "Início"
-        date_end: "Fim"
+        name: Nome
+        date_begin: Data Início
+        date_end: Data Fim
       task:
         title: Título
         user_id: Recurso
@@ -315,8 +338,8 @@ pt-BR:
       item:
         priority: Prioridade
         title: Título
-        date_start: Início
-        date_end: Fim
+        date_start: Data Início
+        date_end: Data Fim
         hour_estimated: Hora Estimada
         hour_used: Hora Utilizada
         user_id: Recurso
@@ -324,8 +347,8 @@ pt-BR:
         description: Descrição
       meeting:
         title: Título
-        date_init: Início
-        date_end: Fim
+        date_init: Data Início
+        date_end: Data Fim
       meeting_item:
         subject: Assunto
         customer_id: Cliente

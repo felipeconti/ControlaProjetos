@@ -19,10 +19,10 @@
         <th><%= t(:id) %></th>
         <th><%= model_class.human_attribute_name(:subject) %></th>
         <th><%= model_class.human_attribute_name(:customer_id) %></th>
-        <th><%= model_class.human_attribute_name(:decision) %></th>
         <th><%= model_class.human_attribute_name(:user_id) %></th>
-        <th><%= model_class.human_attribute_name(:state_id) %></th>
         <th><%= model_class.human_attribute_name(:date_state) %></th>
+        <th><%= model_class.human_attribute_name(:state_id) %></th>
+        <th><%= model_class.human_attribute_name(:decision) %></th>
         <th><%=t 'actions', :default => t("helpers.actions") %></th>
       </tr>
     </thead>

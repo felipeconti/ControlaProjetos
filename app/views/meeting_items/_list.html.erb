@@ -4,7 +4,7 @@
 <% @where_completed  = get_where_with_state(2) %>
 <% @where_canceled   = get_where_with_state(3) %>
 
-<h2>Itens</h2>
+<h2><%= t(:meeting_items) %></h2>
 
 <%= render :partial => 'meeting_items/list_filter', :locals => { :type => 1, :where => @where_pending } %>
 <%= render :partial => 'meeting_items/list_filter', :locals => { :type => 2, :where => @where_completed } %>

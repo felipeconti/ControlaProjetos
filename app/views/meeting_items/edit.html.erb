@@ -1,3 +1,7 @@
-<h1>Editando Item</h1>
+<%- model_class = MeetingItem -%>
+
+<div class="page-header">
+  <h1><%= t('helpers.titles.edit',:model => model_class.model_name.human) %></h1>
+</div>
 
 <%= render 'form' %>

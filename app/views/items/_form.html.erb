@@ -2,7 +2,7 @@
 
     <% if @item.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+          <h3><%= t(:error) %></h3>
 
           <ul>
             <% @item.errors.full_messages.each do |msg| %>
@@ -18,8 +18,8 @@
                   customer_project_task_path(@customer, @project, @task), :class => 'btn' %>
     </div>
 
-    <%= f.input :priority %>
     <%= f.input :title, :autofocus => true %>
+    <%= f.input :priority %>
     <%= f.input :date_start, as: :string, input_html: { class: 'datepicker' } %>
     <%= f.input :date_end, as: :string, input_html: { class: 'datepicker' } %>
     <%= f.input :hour_estimated %>

@@ -9,5 +9,5 @@
 
 <p id="notice"><%= notice %></p>
 
-<%= link_to "Novo Item", new_customer_project_task_item_path(@customer, @project, @task), class: 'btn btn-primary' %>
+<%= link_to t('helpers.titles.new',:model => t(:item)), new_customer_project_task_item_path(@customer, @project, @task), class: 'btn btn-primary' %>
 <%= render :partial => 'items/list' %>

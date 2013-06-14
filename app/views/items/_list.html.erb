@@ -5,7 +5,7 @@
 <% @where_completed   = get_where_with_state_and_priority(2) %>
 <% @where_canceled    = get_where_with_state_and_priority(3) %>
 
-<h2>Itens</h2>
+<h2><%= t(:items) %></h2>
 
 <%= render :partial => 'items/list_filter', :locals => { :type => 0, :where => @where_no_priority } %>
 <%= render :partial => 'items/list_filter', :locals => { :type => 1, :where => @where_pending } %>

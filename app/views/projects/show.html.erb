@@ -10,7 +10,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="task-list">
-  <%= link_to "Nova Tarefa", new_customer_project_task_path(@customer, @project), class: 'btn btn-primary' %>
+  <%= link_to t('helpers.titles.new',:model => t(:task)), new_customer_project_task_path(@customer, @project), class: 'btn btn-primary' %>
   <%= render :partial => 'tasks/list' %>
 </div>
 

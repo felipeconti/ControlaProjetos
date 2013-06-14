@@ -5,37 +5,37 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Subject:</b>
+  <b><%= t(:subject) %></b>
   <%= @item.subject %>
 </p>
 
 <p>
-  <b>Customer:</b>
+  <b><%= t(:customer_id) %></b>
   <% if not @item.customer.nil? %>
     <%= @item.customer.name %>
   <% end %>
 </p>
 
 <p>
-  <b>Decision:</b>
-  <%= simple_format(@item.decision) %>
-</p>
-
-<p>
-  <b>User:</b>
+  <b><%= t(:user_id) %></b>
   <% if not @item.user.nil? %>
       <%= @item.user.name %>
   <% end %>
 </p>
 
 <p>
-  <b>State:</b>
+  <b><%= t(:date_state) %></b>
+  <%= @item.date_state %>
+</p>
+
+<p>
+  <b><%= t(:state_id) %></b>
   <%= @item.state.description %>
 </p>
 
 <p>
-  <b>date_state:</b>
-  <%= @item.date_state %>
+  <b><%= t(:decision) %></b>
+  <%= simple_format(@item.decision) %>
 </p>
 
 <%= link_to t(:edit), edit_meeting_meeting_item_path(@meeting, @item) %> |
