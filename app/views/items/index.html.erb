@@ -25,7 +25,7 @@
   <% @items.each do |item| %>
       <tr>
         <td><%= item.id %></td>
-        <td><%= link_to item.title, customer_project_task_item_path(item.task.project.customer, item.task.project, item.task, item) %></td>
+        <td><%= link_to link_to cutString(item.title,60), customer_project_task_item_path(item.task.project.customer, item.task.project, item.task, item) %></td>
         <td><%= item.task.priority %></td>
         <td><%= item.task.type.description %></td>
         <% if item.task.owner.nil? %>

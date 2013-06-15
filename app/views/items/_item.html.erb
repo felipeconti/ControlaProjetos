@@ -1,6 +1,6 @@
 <tr>
   <td><%= item.id %></td>
-  <td><%= link_to cutString(item.title,20), customer_project_task_item_path(@customer, @project, @task, item) %></td>
+  <td><%= link_to cutString(item.title,60), customer_project_task_item_path(@customer, @project, @task, item) %></td>
   <td><%= item.date_start %></td>
   <td><%= item.date_end %></td>
   <td><%= item.hour_estimated %></td>

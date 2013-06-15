@@ -69,6 +69,7 @@ pt-BR:
         title: Título
         hours: Horas
         description: Descrição
+        priority: Prioridade
       item:
         date_start: Data Início
         date_end: Data Fim
@@ -340,6 +341,7 @@ pt-BR:
         hours: Horas
         state_id: Situação
         created_at: Criado
+        priority: Prioridade
       item:
         priority: Prioridade
         title: Título

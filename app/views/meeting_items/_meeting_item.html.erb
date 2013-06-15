@@ -1,6 +1,6 @@
 <tr>
   <td><%= meeting_item.id %></td>
-  <td><%= link_to cutString(meeting_item.subject,20), meeting_meeting_item_path(@meeting, meeting_item) %></td>
+  <td><%= link_to cutString(meeting_item.subject,60), meeting_meeting_item_path(@meeting, meeting_item) %></td>
   <% if meeting_item.customer.nil? %>
       <td></td>
   <% else %>

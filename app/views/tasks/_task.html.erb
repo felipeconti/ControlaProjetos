@@ -1,6 +1,6 @@
 <tr>
   <td><%= task.id %></td>
-  <td><%= link_to cutString(task.title,20), customer_project_task_path(@customer, @project, task) %></td>
+  <td><%= link_to cutString(task.title,60), customer_project_task_path(@customer, @project, task) %></td>
   <td><%= task.priority %></td>
   <td><%= task.type.description %></td>
   <td><%= task.created_at.to_date() %></td>
@@ -10,7 +10,6 @@
       <td><%= task.owner.name %></td>
   <% end %>
   <td><%= task.hours %></td>
-  <td><%= task.state.description %></td>
   <td><%= task.items.count %></td>
   <td class="no_priority"><%= task.items.where(get_where_with_state(1)).count %></td>
   <td class="completed" ><%= task.items.where(get_where_with_state(2)).count %></td>
