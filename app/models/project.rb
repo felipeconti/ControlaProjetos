@@ -14,4 +14,10 @@ class Project < ActiveRecord::Base
   end
 
   default_scope order('date_begin DESC')
+
+  after_initialize :init
+
+  def init
+    self.date_begin ||= Time.zone.now.to_date
+  end
 end

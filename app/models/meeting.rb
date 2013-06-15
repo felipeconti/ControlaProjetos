@@ -11,4 +11,10 @@ class Meeting < ActiveRecord::Base
   end
 
   default_scope order('date_init DESC')
+
+  after_initialize :init
+
+  def init
+    self.date_init ||= Time.zone.now.to_date
+  end
 end

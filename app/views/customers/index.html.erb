@@ -19,7 +19,7 @@
     <th><%= model_class.human_attribute_name(:website) %></th>
     <th><%= model_class.human_attribute_name(:phone) %></th>
     <th><%= model_class.human_attribute_name(:mobile) %></th>
-    <th>Projetos</th>
+    <th><%= t(:projects) %></th>
     <th><%=t 'actions', :default => t("helpers.actions") %></th>
   </tr>
   </thead>
@@ -28,7 +28,7 @@
       <tr>
         <td><%= customer.id %></td>
         <td><%= image_tag customer.logo.url(:thumb) %></td>
-        <td><%= link_to getNameOrNick(customer.name, customer.nickname), customer_path(customer) %></td>
+        <td><%= link_to cutString(getNameOrNick(customer.name, customer.nickname),20), customer_path(customer) %></td>
         <td><%= customer.enrollment %></td>
         <td><%= customer.email %></td>
         <td><%= customer.website %></td>

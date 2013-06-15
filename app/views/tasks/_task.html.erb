@@ -1,6 +1,6 @@
 <tr>
   <td><%= task.id %></td>
-  <td><%= link_to task.title, customer_project_task_path(@customer, @project, task) %></td>
+  <td><%= link_to cutString(task.title,20), customer_project_task_path(@customer, @project, task) %></td>
   <td><%= task.priority %></td>
   <td><%= task.type.description %></td>
   <td><%= task.created_at.to_date() %></td>
