@@ -20,4 +20,10 @@
       <textarea rows="5" readonly><%= @project.specification %></textarea>
       <br/>
   <% end %>
+
+  <% if not @project.documentation.nil? %>
+      <h3>Documentação</h3>
+      <textarea rows="5" readonly><%= @project.documentation %></textarea>
+      <br/>
+  <% end %>
 </div>

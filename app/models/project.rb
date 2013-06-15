@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  attr_accessible :name, :date_begin, :date_end, :specification
+  attr_accessible :name, :date_begin, :date_end, :specification, :documentation
 
   validates :name, :date_begin, presence: true
 

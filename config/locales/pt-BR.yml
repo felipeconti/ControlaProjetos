@@ -64,6 +64,7 @@ pt-BR:
         date_begin: Data Início
         date_end: Data Fim
         specification: Especificação
+        documentation: Documentação
       task:
         title: Título
         hours: Horas
@@ -330,6 +331,8 @@ pt-BR:
         name: Nome
         date_begin: Data Início
         date_end: Data Fim
+        specification: Especificação
+        documentation: Documentação
       task:
         title: Título
         user_id: Recurso
