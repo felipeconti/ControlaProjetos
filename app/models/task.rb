@@ -1,19 +1,21 @@
 class Task < ActiveRecord::Base
-  attr_accessible :title, :hours, :state_id, :type_id, :description
+  attr_accessible :title, :hours, :type_id, :state_id, :description, :priority
 
-  validates :title, :state_id, :type_id, presence: true
+  validates :title, :type_id, :state_id, presence: true
 
   belongs_to :project
   validates_associated :project
-
-  belongs_to :user
-  validates_associated :user
 
   belongs_to :type
   validates_associated :type
 
   belongs_to :state
   validates_associated :state
+
+  belongs_to :user
+  validates_associated :user
+
+  has_one :owner, :primary_key => "owner_id", :class_name => "User", :foreign_key => "id"
 
   has_many :items, :dependent => :destroy
 
@@ -26,5 +28,6 @@ class Task < ActiveRecord::Base
 
   def init
     self.state_id  ||= 1
+    self.priority  ||= 0
   end
 end

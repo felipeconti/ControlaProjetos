@@ -4,6 +4,10 @@
   <td><%= project.date_begin %></td>
   <td><%= project.date_end %></td>
   <td><%= project.tasks.count %></td>
+  <td class="no_priority" ><%= project.tasks.where(get_where_with_state_and_priority(0)).count %></td>
+  <td><%= project.tasks.where(get_where_with_state_and_priority(1)).count %></td>
+  <td class="completed" ><%= project.tasks.where(get_where_with_state_and_priority(2)).count %></td>
+  <td class="canceled" ><%= project.tasks.where(get_where_with_state_and_priority(3)).count %></td>
   <td>
     <%= link_to t('edit', :default => t("helpers.links.edit")),
                 edit_customer_project_path(@customer, project), :class => 'btn btn-mini' %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130612183645) do
+ActiveRecord::Schema.define(:version => 20130615132459) do
 
   create_table "customers", :force => true do |t|
     t.string   "name"
@@ -46,11 +46,8 @@ ActiveRecord::Schema.define(:version => 20130612183645) do
     t.datetime "updated_at",     :null => false
     t.text     "description"
     t.integer  "state_id"
-    t.integer  "priority"
-    t.integer  "owner_id"
   end
 
-  add_index "items", ["owner_id"], :name => "index_items_on_owner_id"
   add_index "items", ["task_id"], :name => "index_items_on_task_id"
   add_index "items", ["user_id"], :name => "index_items_on_user_id"
 
@@ -117,17 +114,18 @@ ActiveRecord::Schema.define(:version => 20130612183645) do
     t.string   "title"
     t.integer  "hours"
     t.integer  "project_id"
-    t.integer  "user_id"
     t.integer  "type_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.integer  "state_id"
     t.text     "description"
+    t.integer  "owner_id"
+    t.integer  "priority"
   end
 
+  add_index "tasks", ["owner_id"], :name => "index_tasks_on_owner_id"
   add_index "tasks", ["project_id"], :name => "index_tasks_on_project_id"
   add_index "tasks", ["type_id"], :name => "index_tasks_on_type_id"
-  add_index "tasks", ["user_id"], :name => "index_tasks_on_user_id"
 
   create_table "types", :force => true do |t|
     t.string   "description"

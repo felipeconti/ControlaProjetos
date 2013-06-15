@@ -9,7 +9,11 @@
     <th><%= model_class.human_attribute_name(:name) %></th>
     <th><%= model_class.human_attribute_name(:date_begin) %></th>
     <th><%= model_class.human_attribute_name(:date_end) %></th>
-    <th>Tarefas</th>
+    <th><%= t(:tasks) %></th>
+    <th class="no_priority"><%= t 'items_analyzing' %></th>
+    <th><%= t 'items_pending' %></th>
+    <th class="completed"><%= t 'items_completed' %></th>
+    <th class="canceled"><%= t 'items_canceled' %></th>
     <th><%=t 'actions', :default => t("helpers.actions") %></th>
   </tr>
   </thead>

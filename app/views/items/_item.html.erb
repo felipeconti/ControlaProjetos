@@ -1,12 +1,6 @@
 <tr>
   <td><%= item.id %></td>
   <td><%= link_to item.title, customer_project_task_item_path(@customer, @project, @task, item) %></td>
-  <td><%= item.priority %></td>
-  <% if item.owner.nil? %>
-      <td></td>
-  <% else %>
-      <td><%= item.owner.name %></td>
-  <% end %>
   <td><%= item.date_start %></td>
   <td><%= item.date_end %></td>
   <td><%= item.hour_estimated %></td>

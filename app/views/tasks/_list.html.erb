@@ -1,24 +1,13 @@
 <%- model_class = Task -%>
 
+<% @where_no_priority = get_where_with_state_and_priority(0) %>
+<% @where_pending     = get_where_with_state_and_priority(1) %>
+<% @where_completed   = get_where_with_state_and_priority(2) %>
+<% @where_canceled    = get_where_with_state_and_priority(3) %>
+
 <h2><%= t(:tasks) %></h2>
 
-<table class="table table-hover table-bordered table-striped">
-  <thead>
-  <tr>
-    <th><%= t(:id) %></th>
-    <th><%= model_class.human_attribute_name(:title) %></th>
-    <th><%= model_class.human_attribute_name(:type_id) %></th>
-    <th><%= model_class.human_attribute_name(:hours) %></th>
-    <th><%= model_class.human_attribute_name(:state_id) %></th>
-    <th><%= t 'items' %></th>
-    <th class="no_priority"><%= t 'items_analyzing' %></th>
-    <th><%= t 'items_pending' %></th>
-    <th class="completed"><%= t 'items_completed' %></th>
-    <th class="canceled"><%= t 'items_canceled' %></th>
-    <th><%= t 'actions', :default => t("helpers.actions") %></th>
-  </tr>
-  </thead>
-  <tbody>
-  <%= render @project.tasks %>
-  </tbody>
-</table>
+<%= render :partial => 'tasks/list_filter', :locals => { :type => 0, :where => @where_no_priority } %>
+<%= render :partial => 'tasks/list_filter', :locals => { :type => 1, :where => @where_pending } %>
+<%= render :partial => 'tasks/list_filter', :locals => { :type => 2, :where => @where_completed } %>
+<%= render :partial => 'tasks/list_filter', :locals => { :type => 3, :where => @where_canceled } %>

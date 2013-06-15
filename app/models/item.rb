@@ -1,6 +1,6 @@
 class Item < ActiveRecord::Base
-  attr_accessible :date_end, :date_start, :title, :description,
-                  :hour_estimated, :hour_used, :state_id, :user_id, :priority
+  attr_accessible :title, :hour_estimated, :hour_used, :date_start,
+                  :date_end, :user_id, :description, :state_id
 
   validates :title, :date_start, :state_id, presence: true
 
@@ -13,12 +13,10 @@ class Item < ActiveRecord::Base
   belongs_to :user
   validates_associated :user
 
-  has_one :owner, :primary_key => "owner_id", :class_name => "User", :foreign_key => "id"
-
   after_initialize :init
 
   def init
     self.state_id  ||= 1
-    self.priority  ||= 0
+    self.date_start ||= Time.zone.now.to_date
   end
 end

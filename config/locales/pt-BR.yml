@@ -28,6 +28,7 @@ pt-BR:
   date_state: Data Situação
   customer_id: Cliente
   error: Erro! Favor revisar o cadastro.
+  created_at: Criado
 
   customer: Cliente
   customers: Clientes
@@ -335,6 +336,7 @@ pt-BR:
         type_id: Tipo
         hours: Horas
         state_id: Situação
+        created_at: Criado
       item:
         priority: Prioridade
         title: Título
@@ -345,6 +347,7 @@ pt-BR:
         user_id: Recurso
         state_id: Situação
         description: Descrição
+        created_at: Criado
       meeting:
         title: Título
         date_init: Data Início

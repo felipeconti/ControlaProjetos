@@ -1,13 +1,11 @@
 <%- model_class = Item -%>
 
-<% @where_no_priority = get_where_with_state_and_priority(0) %>
-<% @where_pending     = get_where_with_state_and_priority(1) %>
-<% @where_completed   = get_where_with_state_and_priority(2) %>
-<% @where_canceled    = get_where_with_state_and_priority(3) %>
+<% @where_pending    = get_where_with_state(1) %>
+<% @where_completed  = get_where_with_state(2) %>
+<% @where_canceled   = get_where_with_state(3) %>
 
 <h2><%= t(:items) %></h2>
 
-<%= render :partial => 'items/list_filter', :locals => { :type => 0, :where => @where_no_priority } %>
 <%= render :partial => 'items/list_filter', :locals => { :type => 1, :where => @where_pending } %>
 <%= render :partial => 'items/list_filter', :locals => { :type => 2, :where => @where_completed } %>
 <%= render :partial => 'items/list_filter', :locals => { :type => 3, :where => @where_canceled } %>

@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   skip_filter :find_task, :only => :index
 
   def index
-    @items = Item.where(:state_id => 1, :user_id => current_user.id).order(:priority)
+    @items = Item.where(:state_id => 1, :user_id => current_user.id)
     respond_with(@items)
   end
 
@@ -25,7 +25,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = @task.items.new(params[:item])
-    @item.owner_id = current_user.id
     @item.save
     respond_with(@item, location: customer_project_task_path(@customer, @project, @task))
   end

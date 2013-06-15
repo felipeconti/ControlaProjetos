@@ -1,0 +1,41 @@
+<%- model_class = Task -%>
+
+<% @tasks_filtred = @project.tasks.where(where) %>
+
+<% if @tasks_filtred.count > 0 %>
+  
+  <% case type %>
+  <% when 1 %>
+    <h3 class="title_item">Pendentes</h3>
+  <% when 2 %>
+    <h3 class="title_item completed">Concluídos</h3>
+  <% when 3 %>
+    <h3 class="title_item canceled">Cancelados</h3>
+  <% else %>
+    <h3 class="title_item no_priority">Aguardando avaliação de prioridade</h3>
+  <% end %>
+  
+  <table class="table table-hover table-bordered table-striped">
+    <thead>
+      <tr>
+        <th><%= t(:id) %></th>
+        <th><%= model_class.human_attribute_name(:title) %></th>
+        <th><%= model_class.human_attribute_name(:priority) %></th>
+        <th><%= model_class.human_attribute_name(:type_id) %></th>
+        <th><%= model_class.human_attribute_name(:created_at) %></th>
+        <th><%= t(:owner) %></th>
+        <th><%= model_class.human_attribute_name(:hours) %></th>
+        <th><%= model_class.human_attribute_name(:state_id) %></th>
+        <th><%= t(:items) %></th>
+        <th class="no_priority"><%= t 'items_pending' %></th>
+        <th class="completed"><%= t 'items_completed' %></th>
+        <th class="canceled"><%= t 'items_canceled' %></th>
+        <th><%=t 'actions', :default => t("helpers.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @tasks_filtred.order(:priority) %>
+    </tbody>
+  </table>
+
+<% end %>
