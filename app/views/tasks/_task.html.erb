@@ -1,6 +1,11 @@
 <tr>
+
+
+  <td><%= link_to '', "#modal-details", :data => {:toggle=>"modal", :details=>simple_format(task.description)}, :class=>"open-modal-details icon-search"%></td>
+  <%= render :partial => 'share/simple_modal'%>
+
   <td><%= task.id %></td>
-  <td><%= link_to cutString(task.title,60), customer_project_task_path(@customer, @project, task), title: getDesc(task.description), rel: 'tooltip' %></td>
+  <td><%= link_to cutString(task.title,60), customer_project_task_path(@customer, @project, task) %></td>
   <td><%= task.priority %></td>
   <td><%= task.type.description %></td>
   <td><%= task.created_at.to_date() %></td>

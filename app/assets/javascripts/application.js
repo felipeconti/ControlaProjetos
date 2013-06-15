@@ -19,12 +19,16 @@
 
 //http://eternicode.github.io/bootstrap-datepicker/
 $(function(){
-  $('.datepicker')
-    .datepicker({
-      language: 'pt-BR',
-      format: 'yyyy-mm-dd',
-      todayBtn: true,
-      autoclose: true,
-      todayHighlight: true
-    })
+    $('.datepicker')
+        .datepicker({
+            language: 'pt-BR',
+            format: 'yyyy-mm-dd',
+            todayBtn: true,
+            autoclose: true,
+            todayHighlight: true
+        });
+    $('.open-modal-details').click(function(){
+        var details = $(this).data('details');
+        $("#modal-details #details").html(details);
+    });
 });
