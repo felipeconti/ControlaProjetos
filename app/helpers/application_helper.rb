@@ -35,4 +35,8 @@ module ApplicationHelper
         "state_id = 1  OR state_id in (select id from states where UPPER(description) like 'PENDENTE' )"
     end
   end
+
+  def getDesc(desc)
+    t('description') + ": "+ %Q{#{desc}} # Mesmo colocando %Q{} não esta identando!
+  end
 end
