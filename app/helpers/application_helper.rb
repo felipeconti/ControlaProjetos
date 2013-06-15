@@ -37,6 +37,8 @@ module ApplicationHelper
   end
 
   def getDesc(desc)
-    t('description') + ": "+ %Q{#{desc}} # Mesmo colocando %Q{} não esta identando!
+    if not desc.empty?
+      t('description') + ": "+ %Q{#{desc}} # Mesmo colocando %Q{} não esta identando!
+    end
   end
 end
