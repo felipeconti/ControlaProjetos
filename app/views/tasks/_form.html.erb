@@ -24,7 +24,6 @@
     <%= f.select :type_id,
                  Type.all.map { |u| [u.description, u.id] },
                  :prompt => t(:select_type) %>
-    <%= f.input :hours %>
     <%= f.label :state_id %>
     <%= f.select :state_id,
                  State.all.map { |u| [u.description, u.id] },
