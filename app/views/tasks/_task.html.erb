@@ -13,7 +13,7 @@
   <% else %>
       <td><%= task.owner.name %></td>
   <% end %>
-  <td><%= task.hours %></td>
+  <td><%= task.items.sum(:hour_estimated) %></td>
   <td><%= task.items.count %></td>
   <td class="no_priority"><%= task.items.where(get_where_with_state(1)).count %></td>
   <td class="completed" ><%= task.items.where(get_where_with_state(2)).count %></td>
