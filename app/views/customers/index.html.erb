@@ -28,7 +28,7 @@
       <tr>
         <td><%= customer.id %></td>
         <td><%= image_tag customer.logo.url(:thumb) %></td>
-        <td><%= link_to cutString(getNameOrNick(customer.name, customer.nickname),60), customer_path(customer) %></td>
+        <td><%= link_to cutString(getNameOrNick(customer.name, customer.nickname),30), customer_path(customer), :title => getNameOrNick(customer.name, customer.nickname), :rel => 'tooltip' %></td>
         <td><%= customer.enrollment %></td>
         <td><%= customer.email %></td>
         <td><%= customer.website %></td>

@@ -1,6 +1,6 @@
 <tr>
   <td><%= project.id %></td>
-  <td><%= link_to cutString(project.name,60), customer_project_path(@customer, project) %></td>
+  <td><%= link_to cutString(project.name,30), customer_project_path(@customer, project), :title => project.name, :rel => 'tooltip' %></td>
   <td><%= project.date_begin %></td>
   <td><%= project.date_end %></td>
   <td><%= project.tasks.count %></td>

@@ -21,7 +21,7 @@
   <% @items.each do |item| %>
       <tr>
         <td><%= item.id %></td>
-        <td><%= link_to cutString(item.subject, 60), meeting_meeting_item_path(item.meeting, item) %></td>
+        <td><%= link_to cutString(item.subject, 30), meeting_meeting_item_path(item.meeting, item), :title => item.subject, :rel => 'tooltip' %></td>
         <% if item.customer.nil? %>
             <td></td>
         <% else %>

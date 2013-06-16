@@ -4,7 +4,7 @@
   <td><%= link_to '', "#modal-details", :data => {:toggle=>"modal", :details=>task.description}, :class=>"open-modal-details icon-search"%></td>
 
   <td><%= task.id %></td>
-  <td><%= link_to cutString(task.title,60), customer_project_task_path(@customer, @project, task) %></td>
+  <td><%= link_to cutString(task.title,30), customer_project_task_path(@customer, @project, task), :title => task.title, :rel => 'tooltip' %></td>
   <td><%= task.priority %></td>
   <td><%= task.type.description %></td>
   <td><%= task.created_at.to_date() %></td>

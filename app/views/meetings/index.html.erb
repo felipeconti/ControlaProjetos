@@ -26,7 +26,7 @@
   <% @meetings.each do |meeting| %>
       <tr>
         <td><%= meeting.id %></td>
-        <td><%= link_to cutString(meeting.title,60), meeting_path(meeting) %></td>
+        <td><%= link_to cutString(meeting.title,30), meeting_path(meeting), :title => meeting.title, :rel => 'tooltip' %></td>
         <% if meeting.date_init.nil? %>
             <td> - </td>
         <% else %>

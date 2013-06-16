@@ -1,6 +1,6 @@
 <tr>
   <td><%= meeting_item.id %></td>
-  <td><%= link_to cutString(meeting_item.subject,60), meeting_meeting_item_path(@meeting, meeting_item) %></td>
+  <td><%= link_to cutString(meeting_item.subject,30), meeting_meeting_item_path(@meeting, meeting_item), :title => meeting_item.subject, :rel => 'tooltip' %></td>
   <% if meeting_item.customer.nil? %>
       <td></td>
   <% else %>
