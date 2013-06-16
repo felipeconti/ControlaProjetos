@@ -1,8 +1,7 @@
 <tr>
 
-
-  <td><%= link_to '', "#modal-details", :data => {:toggle=>"modal", :details=>simple_format(task.description)}, :class=>"open-modal-details icon-search"%></td>
   <%= render :partial => 'share/simple_modal'%>
+  <td><%= link_to '', "#modal-details", :data => {:toggle=>"modal", :details=>task.description}, :class=>"open-modal-details icon-search"%></td>
 
   <td><%= task.id %></td>
   <td><%= link_to cutString(task.title,60), customer_project_task_path(@customer, @project, task) %></td>
