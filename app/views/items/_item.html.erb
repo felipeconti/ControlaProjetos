@@ -15,7 +15,7 @@
       <td><%= item.user.name %></td>
   <% end %>
   <td><%= item.state.description %></td>
-  <td>
+  <td class="btn_actions">
     <%= link_to t('edit', :default => t("helpers.links.edit")),
                 edit_customer_project_task_item_path(@customer, @project, @task, item), :class => 'btn btn-mini' %>
     <%= link_to t('destroy', :default => t("helpers.links.destroy")),

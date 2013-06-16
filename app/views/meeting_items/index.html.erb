@@ -35,7 +35,7 @@
         <% end %>
         <td><%= item.state.description %></td>
         <td><%= item.date_state %></td>
-        <td>
+        <td class="btn_actions">
           <%= link_to t('edit', :default => t("helpers.links.edit")),
                       edit_meeting_meeting_item_path(item.meeting, item), :class => 'btn btn-mini' %>
           <%= link_to t('destroy', :default => t("helpers.links.destroy")),

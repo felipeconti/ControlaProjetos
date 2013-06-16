@@ -14,7 +14,7 @@
   <td><%= meeting_item.date_state %></td>
   <td><%= meeting_item.state.description %></td>
   <td><%= cutString meeting_item.decision, 20 %></td>
-  <td>
+  <td class="btn_actions">
     <%= link_to t('edit', :default => t("helpers.links.edit")),
                 edit_meeting_meeting_item_path(@meeting, meeting_item), :class => 'btn btn-mini' %>
     <%= link_to t('destroy', :default => t("helpers.links.destroy")),

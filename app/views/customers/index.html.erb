@@ -35,7 +35,7 @@
         <td><%= customer.phone %></td>
         <td><%= customer.mobile %></td>
         <td><%= customer.projects.count %></td>
-        <td>
+        <td class="btn_actions">
           <%= link_to t('edit', :default => t("helpers.links.edit")),
                       edit_customer_path(customer), :class => 'btn btn-mini' %>
           <%= link_to t('destroy', :default => t("helpers.links.destroy")),

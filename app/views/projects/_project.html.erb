@@ -8,7 +8,7 @@
   <td><%= project.tasks.where(get_where_with_state_and_priority(1)).count %></td>
   <td class="completed" ><%= project.tasks.where(get_where_with_state_and_priority(2)).count %></td>
   <td class="canceled" ><%= project.tasks.where(get_where_with_state_and_priority(3)).count %></td>
-  <td>
+  <td class="btn_actions">
     <%= link_to t('edit', :default => t("helpers.links.edit")),
                 edit_customer_project_path(@customer, project), :class => 'btn btn-mini' %>
     <%= link_to t('destroy', :default => t("helpers.links.destroy")),
