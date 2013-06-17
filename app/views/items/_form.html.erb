@@ -25,11 +25,11 @@
     <%= f.input :hour_used %>
     <%= f.label :user_id %>
     <%= f.select :user_id,
-                 User.all.map { |u| [u.name, u.id] },
+                 options_from_collection_for_select(User.all, "id", "name"),
                  :prompt => t(:select_user) %>
     <%= f.label :state_id %>
     <%= f.select :state_id,
-                 State.all.map { |u| [u.description, u.id] },
+                 options_from_collection_for_select(State.all, "id", "description"),
                  :prompt => t(:select_state) %>
     <%= f.input :description %>
 

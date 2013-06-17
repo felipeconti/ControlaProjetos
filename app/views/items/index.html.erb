@@ -4,6 +4,12 @@
   <h3>Meus Itens de Tarefa</h3>
 </div>
 
+<div class="page-search">
+  <%= render :partial => 'share/form_search', :locals => { :controller => "items",
+                                                           :action => "index",
+                                                           :btnFilter => "btnFilterItem" } %>
+</div>
+
 <table class="table table-hover table-bordered table-striped">
   <thead>
   <tr>

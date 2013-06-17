@@ -30,6 +30,9 @@ pt-BR:
   error: Erro! Favor revisar o cadastro.
   created_at: Criado
   responsible: Responsável
+  select_state: Selecione a Situação
+  select_user: Selecione o Recurso
+  select_customer: Selecione o Cliente
 
   customer: Cliente
   customers: Clientes

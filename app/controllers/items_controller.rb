@@ -5,7 +5,10 @@ class ItemsController < ApplicationController
   skip_filter :find_task, :only => :index
 
   def index
-    @items = Item.where(:state_id => 1, :user_id => current_user.id)
+    if (params[:stateId].nil?)
+      params[:stateId] = 1
+    end
+    @items = Item.where(:user_id => current_user.id, :state_id => params[:stateId])
     respond_with(@items)
   end
 

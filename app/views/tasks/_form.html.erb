@@ -22,11 +22,11 @@
     <%= f.input :priority %>
     <%= f.label :type_id %>
     <%= f.select :type_id,
-                 Type.all.map { |u| [u.description, u.id] },
+                 options_from_collection_for_select(Type.all, "id", "description"),
                  :prompt => t(:select_type) %>
     <%= f.label :state_id %>
     <%= f.select :state_id,
-                 State.all.map { |u| [u.description, u.id] },
+                 options_from_collection_for_select(State.all, "id", "description"),
                  :prompt => t(:select_state) %>
     <%= f.input :description %>
 

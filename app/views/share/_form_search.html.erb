@@ -1,0 +1,12 @@
+<%= form_tag({:controller => controller, :action => action},
+             :method => "get",
+             :id => "searchForm",
+             :remote => true) do %>
+
+    <%= label_tag "Situação" %>
+    <%= select_tag "stateId",
+                   options_from_collection_for_select(State.all, "id", "description"),
+                   :prompt => t(:select_state) %>
+
+    <%= button_tag "Filtrar", :name => btnFilter, :id => btnFilter %>
+<% end %>

@@ -27,6 +27,7 @@ $(function(){
             autoclose: true,
             todayHighlight: true
         });
+
     $('.open-modal-details').click(function(){
         var details = $(this).data('details');
         $("#modal-details #details").html(details);

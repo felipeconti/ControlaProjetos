@@ -5,7 +5,10 @@ class MeetingItemsController < ApplicationController
   skip_filter :find_meeting, :only => :index
 
   def index
-    @items = MeetingItem.where :state_id => 1, :user_id => current_user.id
+    if (params[:stateId].nil?)
+      params[:stateId] = 1
+    end
+    @items = MeetingItem.where(:user_id => current_user.id, :state_id => params[:stateId])
     respond_with(@items)
   end
 
