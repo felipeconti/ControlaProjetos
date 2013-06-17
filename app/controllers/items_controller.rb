@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
     if (params[:stateId].nil?)
       params[:stateId] = 1
     end
-    @items = Item.where(:user_id => current_user.id, :state_id => params[:stateId])
+    @items = Item.where(:user_id => current_user.id, :state_id => params[:stateId]).order("task_id DESC, id")
     respond_with(@items)
   end
 

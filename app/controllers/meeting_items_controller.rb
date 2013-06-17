@@ -8,7 +8,7 @@ class MeetingItemsController < ApplicationController
     if (params[:stateId].nil?)
       params[:stateId] = 1
     end
-    @items = MeetingItem.where(:user_id => current_user.id, :state_id => params[:stateId])
+    @items = MeetingItem.where(:user_id => current_user.id, :state_id => params[:stateId]).order("meeting_id DESC, id")
     respond_with(@items)
   end
 
