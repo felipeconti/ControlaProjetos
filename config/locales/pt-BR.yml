@@ -33,6 +33,9 @@ pt-BR:
   select_state: Selecione a Situação
   select_user: Selecione o Recurso
   select_customer: Selecione o Cliente
+  project_id: Projeto
+  task_id: Tarefa
+  meeting_id: Reunião
 
   customer: Cliente
   customers: Clientes
