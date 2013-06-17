@@ -29,6 +29,7 @@ pt-BR:
   customer_id: Cliente
   error: Erro! Favor revisar o cadastro.
   created_at: Criado
+  responsible: Responsável
 
   customer: Cliente
   customers: Clientes
