@@ -31,7 +31,7 @@
         <td><%= link_to cutString(getNameOrNick(customer.name, customer.nickname),30), customer_path(customer), :title => getNameOrNick(customer.name, customer.nickname), :rel => 'tooltip' %></td>
         <td><%= customer.enrollment %></td>
         <td><%= customer.email %></td>
-        <td><%= customer.website %></td>
+        <td><%= link_to customer.website, url_with_protocol(customer.website), :target => "_blank" %></td>
         <td><%= customer.phone %></td>
         <td><%= customer.mobile %></td>
         <td><%= customer.projects.count %></td>
