@@ -66,6 +66,11 @@ body > #wrap {
 
 .table-hover th{
     background-color: #B8D0FA;
+    text-align: center;
+}
+
+.table-hover tr th{
+    text-align: center;
 }
 
 .btn_actions{
