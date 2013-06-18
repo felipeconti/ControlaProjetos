@@ -11,12 +11,16 @@
 
 <p>
   <b><%= t(:date_init) %></b>
-  <%= @meeting.date_init.to_date() %>
+  <% if not @meeting.date_init.nil? %>
+    <%= @meeting.date_init.to_date() %>
+  <% end %>
 </p>
 
 <p>
   <b><%= t(:date_end) %></b>
+  <% if not @meeting.date_end.nil? %>
   <%= @meeting.date_end.to_date() %>
+  <% end %>
 </p>
 
 <p>
