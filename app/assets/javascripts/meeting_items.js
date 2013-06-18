@@ -1,6 +1,11 @@
 $(function(){
     $('#btnFilterMeetingItem').click(function (e) {
         e.preventDefault();
-        location.href = '/user_meeting_items?stateId='+$('#stateId').val();;
+        stateId = $('#stateId').val();
+        if ( stateId != '' ) {
+            location.href = '/user_meeting_items?stateId='+stateId;
+        }else{
+            location.href = '/user_meeting_items';
+        }
     });
 });
