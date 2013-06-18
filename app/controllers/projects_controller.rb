@@ -2,7 +2,6 @@ class ProjectsController < ApplicationController
   respond_to :html, :xml, :json
 
   before_filter :find_customer
-  #skip_filter :find_customer, :only => :index
 
   def index
     @projects = @customer.projects.all

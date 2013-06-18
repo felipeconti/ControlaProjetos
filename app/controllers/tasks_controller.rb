@@ -13,6 +13,11 @@ class TasksController < ApplicationController
     respond_with(@task)
   end
 
+  def detail
+    @task = @project.tasks.find(params[:id])
+    respond_with(@task)
+  end
+
   def new
     @task = @project.tasks.new
     respond_with(@task)

@@ -1,0 +1,41 @@
+<div class="page-header">
+  <h3>
+    <%= image_tag @customer.logo.url(:small) %>
+    <%= link_to "#{@project.name} ", customer_project_path(@customer, @project), class: 'small' %> \ <%= @task.title %>
+  </h3>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= t(:title) %></b>
+  <%= @task.title %>
+</p>
+
+<p>
+  <b><%= t(:type_id) %></b>
+  <%= @task.type.description %>
+</p>
+
+<p>
+  <b><%= t(:state_id) %></b>
+  <%= @task.state.description %>
+</p>
+
+<p>
+  <b><%= t(:description) %></b>
+  <%= simple_format(@task.description) %>
+</p>
+
+<p>
+  <b><%= t(:owner_id) %></b>
+  <%= @task.owner.name %>
+</p>
+
+<p>
+  <b><%= t(:priority) %></b>
+  <%= @task.priority %>
+</p>
+
+<%= link_to t(:edit), edit_customer_project_task_path(@customer, @project, @task) %> |
+<%= link_to t(:back), customer_project_path(@customer, @project) %>
