@@ -11,6 +11,11 @@ class CustomersController < InheritedResources::Base
     respond_with(@customer)
   end
 
+  def detail
+    @customer = Customer.find(params[:id])
+    respond_with(@customer)
+  end
+
   def new
     @customer = Customer.new
     respond_with(@customer)

@@ -28,6 +28,8 @@ ControlaProjetos::Application.routes.draw do
   resources :user_items, :controller => 'items', :action => 'index'
   resources :user_meeting_items, :controller => 'meeting_items', :action => 'index'
 
+  match '/customers/detail/:id' => 'customers#detail', :as => 'customer_detail'
+
   root :to => "items#index"
 
   # The priority is based upon order of creation:

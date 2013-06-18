@@ -11,6 +11,7 @@
 <table class="table table-hover table-bordered table-striped">
   <thead>
   <tr>
+    <th>#</th>
     <th><%= t(:id) %></th>
     <th><%= model_class.human_attribute_name(:logo) %></th>
     <th><%= model_class.human_attribute_name(:name) %></th>
@@ -26,6 +27,10 @@
   <tbody>
   <% @customers.each do |customer| %>
       <tr>
+        <%= render :partial => 'share/simple_modal'%>
+        <td><%= link_to '',
+                        customer_detail_path(customer),
+                        :class=>"icon-search" %></td>
         <td><%= customer.id %></td>
         <td><%= image_tag customer.logo.url(:thumb) %></td>
         <td><%= link_to cutString(getNameOrNick(customer.name, customer.nickname),30), customer_path(customer), :title => getNameOrNick(customer.name, customer.nickname), :rel => 'tooltip' %></td>
