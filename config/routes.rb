@@ -29,6 +29,7 @@ ControlaProjetos::Application.routes.draw do
   resources :user_meeting_items, :controller => 'meeting_items', :action => 'index'
 
   match '/customers/detail/:id' => 'customers#detail', :as => 'customer_detail'
+  match '/customers/:customer_id/projects/:id/detail' => 'projects#detail', :as => 'customer_project_detail'
 
   root :to => "items#index"
 

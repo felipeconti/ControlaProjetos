@@ -1,4 +1,7 @@
 <tr>
+  <td><%= link_to '',
+                  customer_project_detail_path(@customer, project),
+                  :class=>"icon-search" %></td>
   <td><%= project.id %></td>
   <td><%= link_to cutString(project.name,30), customer_project_path(@customer, project), :title => project.name, :rel => 'tooltip' %></td>
   <td><%= project.date_begin %></td>

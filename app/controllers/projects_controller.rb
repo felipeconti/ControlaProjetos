@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
   respond_to :html, :xml, :json
 
   before_filter :find_customer
+  #skip_filter :find_customer, :only => :index
 
   def index
     @projects = @customer.projects.all
@@ -9,6 +10,11 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @project = @customer.projects.find(params[:id])
+    respond_with(@project)
+  end
+
+  def detail
     @project = @customer.projects.find(params[:id])
     respond_with(@project)
   end
