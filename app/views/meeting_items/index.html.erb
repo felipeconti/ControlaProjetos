@@ -13,7 +13,7 @@
 <table class="table table-hover table-bordered table-striped">
   <thead>
   <tr>
-    <th><%= '#' %></th>
+    <th colspan="2"><%= t(:details) %></th>
     <th><%= t(:id) %></th>
     <th><%= t(:item) %></th>
     <th><%= t(:meeting_id) %></th>
@@ -28,14 +28,16 @@
   <% @items.each do |item| %>
       <tr>
         <td><%= link_to '',
+                        meeting_meeting_item_path(item.meeting, item),
+                        :class=>"icon-search" %></td>
+        <td><%= link_to '',
                         "#modal-details",
                         :data => {:toggle=>"modal", :details=>item.decision},
-                        :class=>"open-modal-details icon-search"%></td>
+                        :class=>"open-modal-details icon-th-list"%></td>
         <td><%= item.id %></td>
-        <td><%= link_to cutString(item.subject, 30),
-                        meeting_meeting_item_path(item.meeting, item) %></td>
+        <td><%= cutString(item.subject, 30) %></td>
         <td><%= link_to cutString(item.meeting.title, 30),
-                        meeting_path(item.meeting) %></td>
+                        meeting_detail_path(item.meeting) %></td>
         <% if item.customer.nil? %>
             <td></td>
         <% else %>
