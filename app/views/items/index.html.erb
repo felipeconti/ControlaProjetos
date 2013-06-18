@@ -13,7 +13,7 @@
 <table class="table table-hover table-bordered table-striped">
   <thead>
   <tr>
-    <th><%= t(:detail) %></th>
+    <th colspan="2"><%= t(:details) %></th>
     <th><%= t(:id) %></th>
     <th><%= t(:item) %></th>
     <th><%= t(:task_id) %></th>
@@ -34,16 +34,18 @@
   <% @items.each do |item| %>
       <tr>
         <td><%= link_to '',
+                        customer_project_task_item_path(item.task.project.customer, item.task.project, item.task, item),
+                        :class=>"icon-search" %></td>
+        <td><%= link_to '',
                         "#modal-details",
                         :data => {:toggle=>"modal", :details=>item.description},
-                        :class=>"open-modal-details icon-search"%></td>
+                        :class=>"open-modal-details icon-th-list"%></td>
         <td><%= item.id %></td>
-        <td><%= link_to link_to cutString(item.title, 30),
-                                customer_project_task_item_path(item.task.project.customer, item.task.project, item.task, item) %></td>
+        <td><%= cutString(item.title, 30) %></td>
         <td><%= link_to link_to cutString(item.task.title, 30),
-                                customer_project_task_path(item.task.project.customer, item.task.project, item.task) %></td>
+                                customer_project_task_detail_path(item.task.project.customer, item.task.project, item.task) %></td>
         <td><%= link_to link_to cutString(item.task.project.name, 30),
-                                customer_project_path(item.task.project.customer, item.task.project) %></td>
+                                customer_project_detail_path(item.task.project.customer, item.task.project) %></td>
         <td><%= item.task.priority %></td>
         <td><%= item.task.type.description %></td>
         <% if item.task.owner.nil? %>
