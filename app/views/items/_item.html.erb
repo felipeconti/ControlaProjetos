@@ -2,8 +2,6 @@
   <td><%= link_to '',
                   customer_project_task_item_path(@customer, @project, @task, item),
                   :class=>"icon-search" %></td>
-
-  <%= render :partial => 'share/simple_modal'%>
   <td><%= link_to '',
                   "#modal-details",
                   :data => {:toggle=>"modal", :details=>item.description},

@@ -11,6 +11,11 @@ class MeetingsController < InheritedResources::Base
     respond_with(@meeting)
   end
 
+  def detail
+    @meeting = Meeting.find(params[:id])
+    respond_with(@meeting)
+  end
+
   def new
     @meeting = Meeting.new
     respond_with(@meeting)

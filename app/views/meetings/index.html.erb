@@ -11,7 +11,7 @@
 <table class="table table-hover table-bordered table-striped">
   <thead>
   <tr>
-    <th><%= '#' %></th>
+    <th colspan="2"><%= t(:details) %></th>
     <th><%= t(:id) %></th>
     <th><%= model_class.human_attribute_name(:title) %></th>
     <th><%= model_class.human_attribute_name(:date_init) %></th>
@@ -26,11 +26,18 @@
   <tbody>
   <% @meetings.each do |meeting| %>
       <tr>
-        <%= render :partial => 'share/simple_modal'%>
-        <td><%= link_to '', "#modal-details", :data => {:toggle=>"modal", :details=>meeting.description}, :class=>"open-modal-details icon-search"%></td>
-
+        <td><%= link_to '',
+                        meeting_detail_path(meeting),
+                        :class=>"icon-search" %></td>
+        <td><%= link_to '',
+                        "#modal-details",
+                        :data => {:toggle=>"modal", :details=>meeting.description},
+                        :class=>"open-modal-details icon-th-list"%></td>
         <td><%= meeting.id %></td>
-        <td><%= link_to cutString(meeting.title,30), meeting_path(meeting), :title => meeting.title, :rel => 'tooltip' %></td>
+        <td><%= link_to cutString(meeting.title,30),
+                        meeting_path(meeting),
+                        :title => meeting.title,
+                        :rel => 'tooltip' %></td>
         <% if meeting.date_init.nil? %>
             <td> - </td>
         <% else %>

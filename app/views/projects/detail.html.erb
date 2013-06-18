@@ -14,12 +14,12 @@
 
 <p>
   <b><%= t(:date_begin) %></b>
-  <%= @project.date_begin %>
+  <%= @project.date_begin.to_date() %>
 </p>
 
 <p>
   <b><%= t(:date_end) %></b>
-  <%= @project.date_end %>
+  <%= @project.date_end.to_date() %>
 </p>
 
 <p>

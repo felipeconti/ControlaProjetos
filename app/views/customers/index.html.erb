@@ -27,16 +27,20 @@
   <tbody>
   <% @customers.each do |customer| %>
       <tr>
-        <%= render :partial => 'share/simple_modal'%>
         <td><%= link_to '',
                         customer_detail_path(customer),
                         :class=>"icon-search" %></td>
         <td><%= customer.id %></td>
         <td><%= image_tag customer.logo.url(:thumb) %></td>
-        <td><%= link_to cutString(getNameOrNick(customer.name, customer.nickname),30), customer_path(customer), :title => getNameOrNick(customer.name, customer.nickname), :rel => 'tooltip' %></td>
+        <td><%= link_to cutString(getNameOrNick(customer.name, customer.nickname),30),
+                        customer_path(customer),
+                        :title => getNameOrNick(customer.name, customer.nickname),
+                        :rel => 'tooltip' %></td>
         <td><%= customer.enrollment %></td>
         <td><%= customer.email %></td>
-        <td><%= link_to customer.website, url_with_protocol(customer.website), :target => "_blank" %></td>
+        <td><%= link_to customer.website,
+                        url_with_protocol(customer.website),
+                        :target => "_blank" %></td>
         <td><%= customer.phone %></td>
         <td><%= customer.mobile %></td>
         <td><%= customer.projects.count %></td>

@@ -14,12 +14,12 @@
 
 <p>
   <b><%= t(:date_start) %></b>
-  <%= @item.date_start %>
+  <%= @item.date_start.to_date() %>
 </p>
 
 <p>
   <b><%= t(:date_end) %></b>
-  <%= @item.date_end %>
+  <%= @item.date_end.to_date() %>
 </p>
 
 <p>

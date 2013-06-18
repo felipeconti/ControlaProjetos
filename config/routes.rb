@@ -31,6 +31,7 @@ ControlaProjetos::Application.routes.draw do
   match '/customers/detail/:id' => 'customers#detail', :as => 'customer_detail'
   match '/customers/:customer_id/projects/:id/detail' => 'projects#detail', :as => 'customer_project_detail'
   match '/customers/:customer_id/projects/:project_id/tasks/:id/detail' => 'tasks#detail', :as => 'customer_project_task_detail'
+  match '/meetings/detail/:id' => 'meetings#detail', :as => 'meeting_detail'
 
   root :to => "items#index"
 

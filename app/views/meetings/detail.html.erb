@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3><%= link_to t(:meetings), meetings_path, class: 'small' %> \ <%= @meeting.title %> </h3>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= t(:title) %></b>
+  <%= @meeting.title %>
+</p>
+
+<p>
+  <b><%= t(:date_init) %></b>
+  <%= @meeting.date_init.to_date() %>
+</p>
+
+<p>
+  <b><%= t(:date_end) %></b>
+  <%= @meeting.date_end.to_date() %>
+</p>
+
+<p>
+  <b><%= t(:description) %></b>
+  <%= simple_format(@meeting.description) %>
+</p>
+
+<%= link_to t(:edit), edit_meeting_path(@meeting) %> |
+<%= link_to t(:back), meetings_path %>

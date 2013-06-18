@@ -33,8 +33,6 @@
   <tbody>
   <% @items.each do |item| %>
       <tr>
-
-        <%= render :partial => 'share/simple_modal'%>
         <td><%= link_to '',
                         "#modal-details",
                         :data => {:toggle=>"modal", :details=>item.description},
