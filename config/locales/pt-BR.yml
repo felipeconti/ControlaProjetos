@@ -29,6 +29,7 @@ pt-BR:
   customer_id: Cliente
   error: Erro! Favor revisar o cadastro.
   created_at: Criado
+  owner_id: Criador
   responsible: Responsável
   select_state: Selecione a Situação
   select_user: Selecione o Recurso
@@ -36,6 +37,22 @@ pt-BR:
   project_id: Projeto
   task_id: Tarefa
   meeting_id: Reunião
+  priority: Prioridade
+  name: Nome
+  date_begin: Data Início
+  date_end: Data Fim
+  specification: Especificação
+  documentation: Documentação
+  nickname: Apelido
+  address: Endereço
+  complement: Complemento
+  neighborhood: Bairro
+  zip_code: CEP
+  phone: Telefone
+  mobile: Celular
+  fax: Fax
+  enrollment: CNPJ/CPF
+  email: E-Mail
 
   customer: Cliente
   customers: Clientes
@@ -51,6 +68,8 @@ pt-BR:
   meeting_items: Itens Reunião
   user: Usuário
   users: Usuários
+  detail: Detalhe
+  details: Detalhes
 
   simple_form:
     labels:

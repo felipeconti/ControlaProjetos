@@ -64,7 +64,9 @@
 
 <p>
   <b><%= t(:website) %></b>
-  <%= @customer.website %>
+  <%= link_to @customer.website,
+              url_with_protocol(@customer.website),
+              :target => "_blank" %>
 </p>
 
 <%= link_to t(:edit), edit_customer_path(@customer) %> |
