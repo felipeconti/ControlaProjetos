@@ -3,7 +3,7 @@
 <div class="page-header">
   <h3>
     <%= image_tag @customer.logo.url(:small) %>
-    <%= link_to t(:customers), root_path, class: 'small' %> \ <%= getNameOrNick(@customer.name, @customer.nickname) %>
+    <%= link_to t(:customers), customers_path, class: 'small' %> \ <%= getNameOrNick(@customer.name, @customer.nickname) %> \ <%= t(:projects) %>
   </h3>
 </div>
 

@@ -64,8 +64,8 @@ pt-BR:
   items: Itens
   meeting: Reunião
   meetings: Reuniões
-  meeting_item: Item Reunião
-  meeting_items: Itens Reunião
+  meeting_item: Item
+  meeting_items: Itens
   user: Usuário
   users: Usuários
   detail: Detalhe
@@ -344,7 +344,7 @@ pt-BR:
       task: Tarefa
       item: Item
       meeting: Reunião
-      meeting_item: Item Reunião
+      meeting_item: Item
       user: Usuário
     attributes:
       customer:

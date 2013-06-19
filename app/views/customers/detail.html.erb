@@ -1,7 +1,7 @@
 <div class="page-header">
   <h3>
     <%= image_tag @customer.logo.url(:small) %>
-    <%= link_to t(:customers), customers_path, class: 'small' %> \ <%= @customer.name %>
+    <%= link_to t(:customers), customers_path, class: 'small' %> \ <%= getNameOrNick(@customer.name, @customer.nickname) %>
   </h3>
 </div>
 

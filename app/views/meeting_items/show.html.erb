@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h3><%= link_to "#{@meeting.title} ", meeting_path(@meeting), class: 'small' %> \ <%= @item.subject %> </h3>
+  <h3><%= link_to "#{@meeting.title}" + ' \ ' + t(:items), meeting_path(@meeting), class: 'small' %> \ <%= @item.subject %> </h3>
 </div>
 
 <p id="notice"><%= notice %></p>
