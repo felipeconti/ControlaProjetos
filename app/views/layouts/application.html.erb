@@ -33,7 +33,7 @@
               <% if user_signed_in? %>
                   <li class="dropdown">
                     <a id="my_profile" class="dropdown-toggle" data-toggle="dropdown" href="#">
-                      <%= gravatar_tag current_user.email, :size => 20 %>
+                      <%= current_user.name %> <%= gravatar_tag current_user.email, :size => 20 %>
                     </a>
                     <ul class="dropdown-menu">
                       <li>

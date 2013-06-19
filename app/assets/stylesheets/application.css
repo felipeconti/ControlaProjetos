@@ -78,3 +78,8 @@ body > #wrap {
     width: 97px;
     max-width: 97px;
 }
+
+.nav_user_name {
+    margin-top: 11px;
+    font-size: bold;
+}
