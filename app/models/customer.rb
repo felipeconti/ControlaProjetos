@@ -1,6 +1,9 @@
 class Customer < ActiveRecord::Base
+
+  include Shared::AttachmentHelper
+
   attr_accessible :address, :enrollment, :complement, :email, :fax, :name,
-                  :neighborhood, :nickname, :phone, :mobile, :zip_code, 
+                  :neighborhood, :nickname, :phone, :mobile, :zip_code,
                   :website, :logo
 
   validates :name, presence: true
@@ -13,10 +16,11 @@ class Customer < ActiveRecord::Base
     super include: :projects
   end
 
-  has_attached_file :logo, :styles => { :medium => "300x300>", 
-                                        :small => "50x50>", 
-                                        :thumb => "30x30>" }, :default_url => "/images/:style/missing.png"
+  has_attachment :logo, :styles => { :medium => "300x300>",
+                                     :small => "50x50>",
+                                     :thumb => "30x30>" },
+                        :default_url => "/images/:style/missing.png"
 
   default_scope order('name ASC')
-  
+
 end
