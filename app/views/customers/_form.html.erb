@@ -32,5 +32,10 @@
     <%= f.input :zip_code %>
     <%= f.label :logo %>
     <%= f.file_field :logo %>
+    <br>
+    <% unless @customer.logo.nil? %>
+        <%= image_tag @customer.logo.url %>
+        <%# f.check_box :logo, :_destroy %>
+    <% end %>   
 
 <% end %>

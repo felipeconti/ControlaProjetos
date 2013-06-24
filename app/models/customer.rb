@@ -1,5 +1,4 @@
 class Customer < ActiveRecord::Base
-
   include Shared::AttachmentHelper
 
   attr_accessible :address, :enrollment, :complement, :email, :fax, :name,
@@ -15,12 +14,18 @@ class Customer < ActiveRecord::Base
   def serializable_hash(options = {})
     super include: :projects
   end
-
+  
   has_attachment :logo, :styles => { :medium => "300x300>",
                                      :small => "50x50>",
                                      :thumb => "30x30>" },
                         :default_url => "/images/:style/missing.png"
 
+
+  before_post_process :image?
+  def image?
+    !%w(image/jpg/png).include?(logo_content_type)
+  end
+  
   default_scope order('name ASC')
 
 end

@@ -69,5 +69,10 @@
               :target => "_blank" %>
 </p>
 
+<p>
+  <b><%= t(:logo) %></b>
+  <%= image_tag @customer.logo.url %>
+</p>
+
 <%= link_to t(:edit), edit_customer_path(@customer) %> |
 <%= link_to t(:back), customers_path %>
