@@ -18,6 +18,7 @@ class Task < ActiveRecord::Base
   has_one :owner, :primary_key => "owner_id", :class_name => "User", :foreign_key => "id"
 
   has_many :items, :dependent => :destroy
+  has_many :task_attachments, :dependent => :destroy
 
   default_scope includes(:items)
   def serializable_hash(options = {})

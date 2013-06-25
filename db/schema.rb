@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130616160154) do
+ActiveRecord::Schema.define(:version => 20130625201225) do
 
   create_table "customers", :force => true do |t|
     t.string   "name"
@@ -110,6 +110,18 @@ ActiveRecord::Schema.define(:version => 20130616160154) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "task_attachments", :force => true do |t|
+    t.integer  "task_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "asset_file_name"
+    t.string   "asset_content_type"
+    t.integer  "asset_file_size"
+    t.datetime "asset_updated_at"
+  end
+
+  add_index "task_attachments", ["task_id"], :name => "index_task_attachments_on_task_id"
 
   create_table "tasks", :force => true do |t|
     t.string   "title"
