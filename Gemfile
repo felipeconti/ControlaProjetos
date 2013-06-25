@@ -9,6 +9,7 @@ gem 'rails'
 group :development do 
 	gem 'sqlite3'
 	#gem 'pg'
+  gem 'thin'
 end
 
 group :production do 
