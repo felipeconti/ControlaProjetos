@@ -18,7 +18,7 @@ module Shared
           options[:bucket]          ||= 'controlaprojetos'
           #options[:s3_permissions]  ||= 'private'
           #options[:s3_protocol]     ||= 'https'
-          options[:path] ||= '/:class/:attachment/:style/:id.:extension'
+          options[:path] ||= '/:class/:attachment/:id_:style.:extension'
         else
           options[:url]  ||= '/system/:rails_env/:class/:attachment/:id_:style.:extension'
           options[:path] ||= ':rails_root/public/system/:rails_env/:class/:attachment/:id_:style.:extension'
