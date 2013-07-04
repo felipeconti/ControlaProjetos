@@ -3,7 +3,7 @@ $(function(){
         e.preventDefault();
         var stateId = $('#stateId').val();
         if ( stateId != '' ) {
-            location.href = '/user_meeting_items?stateId='+stateId;
+            $(".page-grid").load('/user_meeting_items_result?stateId='+stateId);
         }else{
             alert('selecione uma situação');
         }

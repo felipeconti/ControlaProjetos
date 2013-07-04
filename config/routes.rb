@@ -35,6 +35,7 @@ ControlaProjetos::Application.routes.draw do
   match '/meetings/detail/:id' => 'meetings#detail', :as => 'meeting_detail'
 
   get 'user_items_result', to: 'items#result'
+  get 'user_meeting_items_result', to: 'meeting_items#result'
 
   root :to => "items#index"
 
