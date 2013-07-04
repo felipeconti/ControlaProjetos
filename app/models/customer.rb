@@ -1,6 +1,10 @@
 class Customer < ActiveRecord::Base
   include Shared::AttachmentHelper
 
+  def to_param
+    "#{id}-#{nickname}"
+  end
+
   attr_accessible :address, :enrollment, :complement, :email, :fax, :name,
                   :neighborhood, :nickname, :phone, :mobile, :zip_code,
                   :website, :logo
