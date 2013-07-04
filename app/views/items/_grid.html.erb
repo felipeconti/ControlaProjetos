@@ -1,0 +1,70 @@
+<%- model_class = Item -%>
+
+<div class="page-grid">
+    <table class="table table-hover table-bordered table-striped">
+      <thead>
+      <tr>
+        <th colspan="2"><%= t(:details) %></th>
+        <th><%= t(:id) %></th>
+        <th><%= t(:item) %></th>
+        <th><%= t(:task_id) %></th>
+        <th><%= t(:project_id) %></th>
+        <th><%= model_class.human_attribute_name(:priority) %></th>
+        <th><%= t(:type_id) %></th>
+        <th><%= t(:owner) %></th>
+        <th><%= model_class.human_attribute_name(:date_start) %></th>
+        <th><%= model_class.human_attribute_name(:date_end) %></th>
+        <th><%= model_class.human_attribute_name(:hour_estimated) %></th>
+        <th><%= model_class.human_attribute_name(:hour_used) %></th>
+        <th><%= t(:developer) %></th>
+        <th><%= model_class.human_attribute_name(:state_id) %></th>
+        <th><%=t 'actions', :default => t("helpers.actions") %></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @items.each do |item| %>
+          <tr>
+            <td><%= link_to '',
+                            customer_project_task_item_path(item.task.project.customer, item.task.project, item.task, item),
+                            :class=>"icon-search" %></td>
+            <td><%= link_to '',
+                            "#modal-details",
+                            :data => {:toggle=>"modal", :details=>item.description},
+                            :class=>"open-modal-details icon-th-list"%></td>
+            <td><%= item.id %></td>
+            <td><%= cutString(item.title, 30) %></td>
+            <td><%= link_to link_to cutString(item.task.title, 30),
+                                    customer_project_task_detail_path(item.task.project.customer, item.task.project, item.task) %></td>
+            <td><%= link_to link_to cutString(item.task.project.name, 30),
+                                    customer_project_detail_path(item.task.project.customer, item.task.project) %></td>
+            <td><%= item.task.priority %></td>
+            <td><%= item.task.type.description %></td>
+            <% if item.task.owner.nil? %>
+                <td></td>
+            <% else %>
+                <td><%= item.task.owner.name %></td>
+            <% end %>
+            <td><%= item.date_start %></td>
+            <td><%= item.date_end %></td>
+            <td><%= item.hour_estimated %></td>
+            <td><%= item.hour_used %></td>
+            <% if item.user.nil? %>
+                <td></td>
+            <% else %>
+                <td><%= item.user.name %></td>
+            <% end %>
+            <td><%= item.state.description %></td>
+            <td class="btn_actions">
+              <%= link_to t('edit', :default => t("helpers.links.edit")),
+                          edit_customer_project_task_item_path(item.task.project.customer, item.task.project, item.task, item), :class => 'btn btn-mini' %>
+              <%= link_to t('destroy', :default => t("helpers.links.destroy")),
+                          customer_project_task_item_path(item.task.project.customer, item.task.project, item.task, item),
+                          :method => :delete,
+                          :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => t('sure'))) },
+                          :class => 'btn btn-mini btn-danger' %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+</div>

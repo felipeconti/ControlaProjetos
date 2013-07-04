@@ -26,12 +26,15 @@ ControlaProjetos::Application.routes.draw do
   resources :users, :controller => 'users_json'
 
   resources :user_items, :controller => 'items', :action => 'index'
+
   resources :user_meeting_items, :controller => 'meeting_items', :action => 'index'
 
   match '/customers/detail/:id' => 'customers#detail', :as => 'customer_detail'
   match '/customers/:customer_id/projects/:id/detail' => 'projects#detail', :as => 'customer_project_detail'
   match '/customers/:customer_id/projects/:project_id/tasks/:id/detail' => 'tasks#detail', :as => 'customer_project_task_detail'
   match '/meetings/detail/:id' => 'meetings#detail', :as => 'meeting_detail'
+
+  get 'user_items_result', to: 'items#result'
 
   root :to => "items#index"
 

@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   respond_to :html, :json, :xml
 
   before_filter :find_task
-  skip_filter :find_task, :only => :index
+  skip_filter :find_task, :only => [:index, :result]
 
   def index
     if (params[:stateId].nil?)
@@ -10,6 +10,14 @@ class ItemsController < ApplicationController
     end
     @items = Item.where(:user_id => current_user.id, :state_id => params[:stateId]).order("task_id DESC, id")
     respond_with(@items)
+  end
+
+  def result
+    if (params[:stateId].nil?)
+      params[:stateId] = 1
+    end
+    @items = Item.where(:user_id => current_user.id, :state_id => params[:stateId]).order("task_id DESC, id")
+    render :partial => 'items/grid'
   end
 
   def show
