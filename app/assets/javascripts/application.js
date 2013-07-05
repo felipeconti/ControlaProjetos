@@ -33,3 +33,16 @@ $(function(){
         $("#modal-details #details").html(details);
     });
 });
+
+function getStateId() {
+    var stateId = $('#stateId').val();
+    if ( stateId == '' ) {
+        setStateDefaultValue();
+        stateId = $('#stateId').val();
+    }
+    return stateId;
+}
+
+function setStateDefaultValue() {
+    $("#stateId").prop("selectedIndex", 0);
+}
