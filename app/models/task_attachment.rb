@@ -1,11 +1,10 @@
 class TaskAttachment < ActiveRecord::Base
-
   include Shared::AttachmentHelper
+
+  attr_accessible :asset
 
   belongs_to :task
   validates_associated :task
-
-  attr_accessible :asset
   
   validates :asset, presence: true
 

@@ -1,9 +1,5 @@
 class Meeting < ActiveRecord::Base
   attr_accessible :date_end, :date_init, :description, :title
-
-  def to_param
-    "#{id}-#{title}"
-  end
   
   validates :title, :date_init, presence: true
 

@@ -1,10 +1,6 @@
 class Project < ActiveRecord::Base
   attr_accessible :name, :date_begin, :date_end, :specification, :documentation
 
-  def to_param
-    "#{id}-#{name}"
-  end
-
   validates :name, :date_begin, presence: true
 
   belongs_to :customer

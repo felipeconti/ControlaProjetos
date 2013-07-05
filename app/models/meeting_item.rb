@@ -1,9 +1,5 @@
 class MeetingItem < ActiveRecord::Base
   attr_accessible :customer_id, :subject, :decision, :user_id, :state_id, :date_state
-
-  def to_param
-    "#{id}-#{subject}"
-  end
   
   validates :subject, :state_id, presence: true
 

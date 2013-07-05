@@ -1,10 +1,6 @@
 class Item < ActiveRecord::Base
   attr_accessible :title, :hour_estimated, :hour_used, :date_start,
                   :date_end, :user_id, :description, :state_id
-
-  def to_param
-    "#{id}-#{title}"
-  end
   
   validates :title, :state_id, presence: true
 

@@ -1,9 +1,5 @@
 class Task < ActiveRecord::Base
   attr_accessible :title, :type_id, :state_id, :description, :priority
-
-  def to_param
-    "#{id}-#{title}"
-  end
   
   validates :title, :type_id, :state_id, presence: true
 
