@@ -13,7 +13,8 @@ group :development do
 end
 
 group :production do 
-	gem 'mysql2'
+  gem 'mysql2'
+  gem 'newrelic_rpm'
 	#gem 'pg'
 end
 
@@ -43,7 +44,6 @@ gem 'inherited_resources'
 gem 'bootstrap-datepicker-rails'
 gem 'paperclip'
 gem 'aws-sdk'
-gem 'newrelic_rpm'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
